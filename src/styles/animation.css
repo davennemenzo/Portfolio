@@ -1,0 +1,41 @@
+/* animations.css */
+
+/* Keyframes for UI/UX DESIGNER Sliding from Left to Right */
+@keyframes slide-left-right {
+  0% {
+    transform: translateX(-70%);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(70%);
+  }
+}
+
+/* Keyframes for FRONTEND DEVELOPER Sliding from Right to Left */
+@keyframes slide-right-left {
+  0% {
+    transform: translateX(85%);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-85%);
+  }
+}
+
+/* Animation classes */
+.animate-slide-left-right {
+  animation: slide-left-right 6s ease-in-out infinite;
+}
+
+.animate-slide-right-left {
+  animation: slide-right-left 6s ease-in-out infinite;
+}
+
+/* Prevent wrapping of text */
+.whitespace-nowrap {
+  white-space: nowrap;
+}
