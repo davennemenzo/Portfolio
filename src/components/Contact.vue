@@ -1,5 +1,5 @@
 <template>
-    Contact ashhafhsakh
+    Contact 
   </template>
   
   <sricpt setup></sricpt>
