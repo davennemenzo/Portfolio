@@ -1,25 +1,14 @@
 <template>
-  <v-container :class="computedClass" fluid>
-    <v-row justify="center">
-      <v-col cols="12" md="10" lg="8">
-        <slot />
-      </v-col>
-    </v-row>
-  </v-container>
+  <div
+    class="container mx-auto px-4 sm:px-6 md:px-8 lg:px-10"
+    style="max-width: 2980px"
+  >
+    <slot />
+  </div>
 </template>
 
 <script>
 export default {
   name: "PageContainer",
-  computed: {
-    computedClass() {
-      const { xs, sm, md, lg } = this.$vuetify.breakpoint;
-      if (xs) return "pa-2"; // Small padding for mobile
-      if (sm) return "pa-4"; // Medium padding for tablet
-      if (md) return "pa-6"; // Larger padding for laptops
-      if (lg) return "pa-8"; // Largest padding for desktops
-      return "pa-10"; // Default for extra-large screens
-    },
-  },
 };
 </script>
