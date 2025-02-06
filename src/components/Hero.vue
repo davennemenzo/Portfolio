@@ -1,23 +1,28 @@
 <template>
-    <div
-    class="min-h-[300px] max-h-[300px] md:min-h-[600px] md:max-h-[600px] lg:h-screen flex flex-col bg-cover overflow-hidden"
+  <div
+    class="min-h-[300px] max-h-[300px] md:min-h-[600px] md:max-h-[600px] lg:h-screen flex flex-col bg-cover overflow-hidden relative"
   >
-    <div class="flex flex-col justify-center overflow-hidden relative h-full">
-      <!-- UI/UX DESIGNER Sliding from Left to Right -->
-      <div
-        class="flex justify-center items-center text-[90px] sm:text-[150px] md:text-[160px] lg:text-[240px] text-lavender font-bold uppercase animate-slide-left-right whitespace-nowrap leading-none"
-      >
-        UI/UX DESIGNER
+    <div class="h-full flex flex-col">
+      <!-- Text container -->
+      <div class="absolute inset-0 flex flex-col justify-center ">
+        <!-- UI/UX DESIGNER Sliding from Left to Right -->
+        <div
+          class="flex justify-center items-center text-[90px] sm:text-[150px] md:text-[160px] lg:text-[240px] text-lavender font-bold uppercase animate-slide-left-right whitespace-nowrap leading-none"
+        >
+          UI/UX DESIGNER
+        </div>
+
+        <!-- FRONTEND DEVELOPER Sliding from Right to Left -->
+        <div
+          class="flex justify-center items-center text-[90px] sm:text-[150px] md:text-[160px] lg:text-[240px] text-lavender font-bold uppercase animate-slide-right-left whitespace-nowrap leading-none"
+        >
+          FRONTEND DEVELOPER
+        </div>
       </div>
 
-      <!-- FRONTEND DEVELOPER Sliding from Right to Left -->
+      <!-- Image container -->
       <div
-        class="flex justify-center items-center text-[90px] sm:text-[150px] md:text-[160px] lg:text-[240px] text-lavender font-bold uppercase animate-slide-right-left whitespace-nowrap leading-none"
-      >
-        FRONTEND DEVELOPER
-      </div>
-      <div
-        class="absolute bottom-0 left-1/2 transform -translate-x-1/2 z-50 w-[300px] h-[300px] md:w-[540px] md:h-[540px] lg:w-[600px] lg:h-[600px] flex justify-center"
+        class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[300px] h-[300px] md:w-[540px] md:h-[540px] lg:w-[600px] lg:h-[600px]"
       >
         <img
           src="@/images/test.png"
