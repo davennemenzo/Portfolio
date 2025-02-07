@@ -2,7 +2,6 @@
   <div
     class="min-h-[300px] max-h-[300px] md:min-h-[600px] md:max-h-[600px] lg:h-screen flex flex-col bg-cover overflow-hidden relative"
   >
-    <div class="h-full flex flex-col">
       <!-- Text container -->
       <div class="absolute inset-0 flex flex-col justify-center ">
         <!-- UI/UX DESIGNER Sliding from Left to Right -->
@@ -31,7 +30,6 @@
         />
       </div>
     </div>
-  </div>
 </template>
 
 <script>

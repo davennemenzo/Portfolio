@@ -1,8 +1,8 @@
 <template>
   <div class="h-screen overflow-y-auto bg-cover">
     <Navbar class="z-50 fixed w-full" />
-    <Hero class="mb-15"/>
-    <Projects class="mb-15"/>
+    <Hero/>
+    <Projects/>
     <AboutMe />
   </div>
 </template>
