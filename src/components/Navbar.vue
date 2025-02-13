@@ -1,5 +1,5 @@
 <template>
-  <header class="w-full text-lavender relative z-[100]">
+  <header class="w-full text-cover relative z-[100] h-16 sm:h-20">
     <page-container>
       <nav class="w-full flex items-center justify-between py-4 relative">
         <!-- Logo -->

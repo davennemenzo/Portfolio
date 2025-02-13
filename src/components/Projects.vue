@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col bg-lavender h-auto">
+  <div class="flex flex-col bg-lavender h-auto sm:h-screen">
     <!-- Header section -->
 
     <div class="flex justify-center items-center flex-col relative">
@@ -12,7 +12,7 @@
 
     <!-- Content section -->
     <div class="container mx-auto py-10 px-4">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
         <ProjectCard
           v-for="project in projects"
           :key="project.id"
@@ -40,7 +40,7 @@ const projects = [
     skillIcons: "https://skillicons.dev/icons?i=figma,vue,tailwind,css",
   },
   {
-    id: 1,
+    id: 2,
     title: "Passafun: A Dynamic Quiz Game Portal",
     description:
       "Development of an interactive quiz platform designed to offer a variety of quizzes, personality tests, and assessments for an engaging and educational experience.",
@@ -50,7 +50,7 @@ const projects = [
     skillIcons: "https://skillicons.dev/icons?i=figma,vue,tailwind,css",
   },
   {
-    id: 1,
+    id: 2,
     title: "Passafun: A Dynamic Quiz Game Portal",
     description:
       "Development of an interactive quiz platform designed to offer a variety of quizzes, personality tests, and assessments for an engaging and educational experience.",
@@ -59,16 +59,7 @@ const projects = [
     skillIconsUrl: "https://skillicons.dev",
     skillIcons: "https://skillicons.dev/icons?i=figma,vue,tailwind,css",
   },
-  {
-    id: 1,
-    title: "Passafun: A Dynamic Quiz Game Portal",
-    description:
-      "Development of an interactive quiz platform designed to offer a variety of quizzes, personality tests, and assessments for an engaging and educational experience.",
-    category: "UI/UX DESIGN & FRONTEND DEVELOPMENT",
-    videoSrc: PassafunVideo,
-    skillIconsUrl: "https://skillicons.dev",
-    skillIcons: "https://skillicons.dev/icons?i=figma,vue,tailwind,css",
-  },
+  
   // Add more projects here
 ];
 </script>

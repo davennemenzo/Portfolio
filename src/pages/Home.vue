@@ -1,6 +1,6 @@
 <template>
-  <div class="h-screen overflow-y-auto bg-cover">
-    <Navbar class="z-50 fixed w-full" />
+  <div class="h-screen overflow-y-auto bg-lavender">
+    <Navbar class="z-50 fixed w-full  " />
     <Hero/>
     <Projects/>
     <AboutMe />
