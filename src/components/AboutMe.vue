@@ -32,7 +32,7 @@
           class="w-[300px] h-[300px] md:w-[540px] md:h-[540px] lg:w-[600px] lg:h-[600px] -mt-8 md:-mt-12 lg:-mt-13"
         >
           <img
-            src="@/images/test.png"
+            src="/images/aboutme.png"
             alt="About"
             class="w-full h-full object-cover"
           />
