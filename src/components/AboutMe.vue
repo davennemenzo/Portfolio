@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col bg-cover h-auto">
+  <div class="min-h-[300px] md:min-h-[600px] lg:min-h-screen flex flex-col bg-cover overflow-hidden relative">
     <!-- Header section -->
     <PageContainer>
       <div class="flex justify-center items-center flex-col relative mb-12">

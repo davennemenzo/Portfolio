@@ -1,17 +1,17 @@
 <template>
-  <div class="flex flex-col bg-lavender h-auto sm:h-screen">
+  <div class="flex flex-col bg-lavender min-h-[300px] md:min-h-[600px] lg:min-h-screen ">
     <!-- Header section -->
 
     <div class="flex justify-center items-center flex-col relative">
       <div
-        class="mt-6 text-[35px] sm:text-[50px] md:text-[55px] lg:text-[60px] text-cover font-bold uppercase whitespace-nowrap leading-none"
+        class="sm:mt-10 mt-5 text-[35px] sm:text-[50px] md:text-[55px] lg:text-[60px] text-cover font-bold uppercase whitespace-nowrap leading-none"
       >
         <span>Projects</span>
       </div>
     </div>
 
     <!-- Content section -->
-    <div class="container mx-auto py-10 px-4">
+    <div class="container mx-auto sm:py-16 py-6 px-4">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
         <ProjectCard
           v-for="project in projects"
