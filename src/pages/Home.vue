@@ -1,9 +1,9 @@
 <template>
   <div class="h-screen overflow-y-auto bg-lavender">
-    <Navbar class="z-50 fixed w-full  " />
+    <Navbar class="z-50  w-full  " />
     <Hero/>
-    <Projects/>
     <AboutMe />
+    <Projects/>
   </div>
 </template>
 
