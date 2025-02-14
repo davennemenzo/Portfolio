@@ -6,14 +6,14 @@
     <div class="absolute inset-0 flex flex-col justify-center items-center space-y-6 lg:space-y-10">
       <!-- UI/UX DESIGNER Sliding from Left to Right -->
       <div
-        class="text-[90px] sm:text-[150px] md:text-[160px] lg:text-[240px] whitespace-nowrap font-bold uppercase animate-slide-left-right text-center leading-none"
+        class="text-[90px] sm:text-[150px] md:text-[160px] lg:text-[240px] whitespace-nowrap bg-blue-200 font-bold uppercase animate-slide-left-right text-center leading-none"
       >
         UI/UX DESIGNER
       </div>
 
       <!-- FRONTEND DEVELOPER Sliding from Right to Left -->
       <div
-        class="text-[90px] sm:text-[150px] md:text-[160px] lg:text-[240px] whitespace-nowrap font-bold uppercase animate-slide-right-left text-center leading-none"
+        class="text-[90px] sm:text-[150px] md:text-[160px] lg:text-[240px] whitespace-nowrap bg-blue-200 font-bold uppercase animate-slide-right-left text-center leading-none"
       >
         FRONTEND DEVELOPER
       </div>
@@ -21,10 +21,10 @@
 
     <!-- Image container -->
     <div
-      class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] lg:w-[750px] lg:h-[750px]"
+      class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[360px] h-[360px] sm:w-[550px] sm:h-550px] md:w-[650px] md:h-[650px] lg:w-[850px] lg:h-[850px]"
     >
       <img
-        src="@/images/test.png"
+        src="/images/davenid.png"
         alt="About"
         class="w-full h-full object-cover rounded-full shadow-xl"
       />

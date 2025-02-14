@@ -17,7 +17,7 @@
         <!-- Text content -->
         <div class="flex flex-col space-y-4 md:w-1/2 text-lavender">
           <span class="text-2xl font-bold">HELLO</span>
-          <span class="text-3xl font-bold mb-4">I'M DAVEN</span>
+          <span class="text-3xl font-bold mb-4">I'M DAVEN NEMENZO</span>
           <span class="text-lg">
             I'm a UI/UX Designer and Frontend Developer passionate about
             crafting seamless, intuitive, and visually compelling digital
@@ -32,7 +32,7 @@
           class="w-[300px] h-[300px] md:w-[540px] md:h-[540px] lg:w-[600px] lg:h-[600px] -mt-8 md:-mt-12 lg:-mt-13"
         >
           <img
-            src="@/images/test.png"
+            src="/images/aboutme.png"
             alt="About"
             class="w-full h-full object-cover"
           />
