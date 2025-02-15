@@ -1,9 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import AboutMePage from './pages/AboutMePage.vue';
-import Home from './pages/Home.vue';
+import Home from './Home.vue';
 import ContactPage from './pages/ContactPage.vue';
-import SkillsAndToolsPage from './pages/SkillsAndToolsPage.vue';
 import ProjectsPage from './pages/ProjectsPage.vue';
+import ExpertisePage from './pages/ExpertisePage.vue';
+import TestimonialPage from './pages/TestimonialPage.vue';
 
 
 // Define the routes
@@ -29,9 +30,13 @@ const routes = [
     component: ContactPage,
   },
   {
-    path: "/skillsandtools",
-    name: "SkillsAndToolsPage",
-    component: SkillsAndToolsPage,
+    path: "/expertise",
+    name: "ExpertisePage",
+    component: ExpertisePage,
+  },{
+    path: "/testimonials",
+    name: "TestimonialsPage",
+    component: TestimonialPage,
   },
 ];
 

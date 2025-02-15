@@ -1,7 +1,7 @@
 <template>
-  <header class="w-full text-cover relative z-[100] ">
+  <header class="w-full text-cover bg-lavender shadow-sm fixed top-0 left-0  z-50 ">
     <page-container>
-      <nav class="w-full flex items-center justify-between py-4 relative">
+      <nav class="w-full flex items-center justify-between py-3 relative">
         <!-- Logo -->
         <a href="#" class="text-2xl font-bold tracking-widest">DRMN</a>
 
@@ -49,12 +49,11 @@
             isMenuOpen ? 'flex' : 'hidden',
           ]"
         >
-          <li><a href="#" class="hover:text-blue-400">Home</a></li>
-          <li><a href="#about" class="hover:text-blue-400">About</a></li>
-          <li><a href="#projects" class="hover:text-blue-400">Projects</a></li>
-          <li>
-            <a href="#expertise" class="hover:text-blue-400">Expertise</a>
-          </li>
+          <li><a href="#" @click.prevent="scrollToSection('hero')" class="hover:text-blue-400">Home</a></li>
+          <li><a href="#" @click.prevent="scrollToSection('aboutme')" class="hover:text-blue-400">About</a></li>
+          <li><a href="#" @click.prevent="scrollToSection('projects')" class="hover:text-blue-400">Projects</a></li>
+          <li><a href="#" @click.prevent="scrollToSection('expertise')" class="hover:text-blue-400">Expertise</a></li>
+          <li><a href="#" @click.prevent="scrollToSection('testimonials')" class="hover:text-blue-400">Testimonials</a></li>
         </ul>
       </nav>
     </page-container>
@@ -71,7 +70,16 @@ export default {
       isMenuOpen: false,
     };
   },
-};
+  methods: {
+    scrollToSection(sectionId) {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+        this.isMenuOpen = false; // Close menu on mobile
+      }
+    },
+  },
+};  
 </script>
 
 <style scoped>
