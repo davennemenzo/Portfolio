@@ -34,7 +34,7 @@
                   </h4>
                   <div class="flex gap-2 flex-wrap">
                     <img
-                      src="https://skillicons.dev/icons?i=figma,ps,ai,xd"
+                      src="https://skillicons.dev/icons?i=figma,ps,"
                       alt="Design Tools"
                     />
                   </div>
@@ -63,7 +63,7 @@
                   </h4>
                   <div class="flex gap-2 flex-wrap">
                     <img
-                      src="https://skillicons.dev/icons?i=vue,react,js,ts,html,css,tailwind"
+                      src="https://skillicons.dev/icons?i=vue,js,css,tailwind"
                       alt="Frontend Tools"
                     />
                   </div>
