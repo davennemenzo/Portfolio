@@ -3,54 +3,76 @@
     class="min-h-[300px] md:min-h-[600px] lg:min-h-screen flex flex-col bg-cover overflow-hidden relative"
   >
     <PageContainer>
-      <div class="flex flex-col justify-center items-center text-5xl">
+      <div class="flex flex-col justify-center items-center">
         <div
           class="sm:my-[70px] my-5 text-[35px] sm:text-[50px] md:text-[55px] lg:text-[60px] text-lavender font-bold uppercase whitespace-nowrap leading-none"
         >
-          My Skills
+          My Expertise
         </div>
-<div class="group relative grid grid-cols-[auto_auto_1fr] items-center gap-x-6 bg-gray-100 p-6 rounded-lg shadow-md transition-all duration-300">
-  <!-- Order Number -->
-  <span class="text-xl font-bold text-gray-500">01.</span>
 
-  <!-- Image Container (Appears on Hover) -->
-  <div
-    class="border border-black z-50 mx-20 w-60 h-60 bg-lavender flex justify-center items-center rounded-xl transform transition-all duration-300 opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 group-hover:-rotate-12"
-  >
-    <img
-      src="/images/davenid.png"
-      alt="About"
-      class="w-48 h-48 object-cover shadow-lg rounded-lg"
-    />
-  </div>
+        <!-- Skills Grid -->
+        <div
+          class="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full max-w-7xl mx-auto"
+        >
+          <!-- UI Design Skill -->
+          <div
+            class="group relative bg-gray-100 p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg"
+          >
+            <div class="flex items-start gap-4">
+              <span class="text-xl font-bold text-lavender">01.</span>
+              <div class="space-y-4">
+                <h3 class="text-2xl font-semibold text-gray-800">
+                  User Interface Design
+                </h3>
+                <p class="text-gray-700 leading-relaxed">
+                  Creating intuitive and visually appealing interfaces that
+                  enhance user experience and engagement.
+                </p>
+                <div class="space-y-2">
+                  <h4 class="text-lg font-semibold text-gray-800">
+                    Tools & Technologies
+                  </h4>
+                  <div class="flex gap-2 flex-wrap">
+                    <img
+                      src="https://skillicons.dev/icons?i=figma,ps,ai,xd"
+                      alt="Design Tools"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-  <!-- Text Content -->
-  <div class="flex flex-col gap-y-2">
-    <!-- Title (Always Visible) -->
-    <span class="text-2xl font-semibold text-gray-800">User Interface Design</span>
+          <!-- Frontend Development -->
+          <div
+            class="group relative bg-gray-100 p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg"
+          >
+            <div class="flex items-start gap-4">
+              <span class="text-xl font-bold text-lavender">02.</span>
+              <div class="space-y-4">
+                <h3 class="text-2xl font-semibold text-gray-800">
+                  Frontend Development
+                </h3>
+                <p class="text-gray-700 leading-relaxed">
+                  Building responsive and interactive web applications with
+                  modern frameworks and technologies.
+                </p>
+                <div class="space-y-2">
+                  <h4 class="text-lg font-semibold text-gray-800">
+                    Tools & Technologies
+                  </h4>
+                  <div class="flex gap-2 flex-wrap">
+                    <img
+                      src="https://skillicons.dev/icons?i=vue,react,js,ts,html,css,tailwind"
+                      alt="Frontend Tools"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-    <!-- Description (Appears on Hover) -->
-    <span
-      class="text-lg text-gray-700 leading-relaxed opacity-0 translate-y-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0"
-    >
-      A UI designer creates the visual elements and layouts for a product's user interface (UI).
-      The UI is the point of contact between a user and a device or product.
-    </span>
-
-    <!-- Tools (Appears on Hover) -->
-    <span
-      class="text-2xl font-semibold text-gray-800 opacity-0 translate-y-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0"
-    >
-      Tools I Use
-    </span>
-    <a
-      href="https://skillicons.dev"
-      class="opacity-0 translate-y-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0"
-    >
-      <img src="https://skillicons.dev/icons?i=figma,ps" />
-    </a>
-  </div>
-</div>
+        </div>
       </div>
     </PageContainer>
   </div>

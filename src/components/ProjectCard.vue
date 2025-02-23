@@ -2,9 +2,9 @@
   <div>
     <!-- Mobile Layout (default) -->
     <div
-      class="md:hidden flex flex-col items-center border border-cover w-full rounded-lg bg-slate-200 p-4"
+      class="md:hidden flex flex-col items-center border w-full rounded-lg bg-slate-200 p-4"
     >
-      <div class="w-full mb-3 border-cover border-b-2">
+      <div class="w-full mb-3 border-b-2">
         <video
           class="w-full h-full object-contain rounded-md"
           autoplay
@@ -33,11 +33,11 @@
       </div>
     </div>
 
-    <!-- Desktop Layout (with hover effect) -->
+    <!-- Desktop Layout (rely on parent grid) -->
     <div
-      class="hidden md:flex flex-col items-center rounded-3xl p-4 w-full bg-slate-200 border border-cover relative group overflow-hidden"
+      class="hidden md:flex flex-col items-center rounded-3xl p-4 w-full bg-slate-200 border relative group overflow-hidden transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl"
     >
-      <div class="w-full mb-2 mx-auto  border-cover border-b-2">
+      <div class="w-full mb-2 mx-auto border-b-2">
         <video
           class="w-full h-full object-cover rounded-xl"
           autoplay
@@ -49,7 +49,6 @@
         </video>
       </div>
 
-      <!-- Simplified layout structure -->
       <div class="flex flex-col gap-y-4 w-full">
         <div class="flex flex-col gap-y-2">
           <h3 class="text-[20px] font-bold">{{ project.title }}</h3>
@@ -57,7 +56,7 @@
         </div>
 
         <div class="flex flex-col gap-y-2">
-          <div class="text-[9px] font-bold p-2 bg-emerald-500 text-lavender w-fit rounded-lg">
+          <div class="text-[9px] font-bold p-2 bg-emerald-500 text-white w-fit rounded-lg">
             {{ project.category }}
           </div>
 
@@ -82,3 +81,12 @@ defineProps({
   },
 });
 </script>
+
+<style scoped>
+/* Hover animation retained */
+.md\:flex:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+</style>

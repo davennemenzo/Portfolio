@@ -21,7 +21,7 @@
 
     <!-- Image container -->
     <div
-      class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[300px] h-[300px] sm:w-[500px] sm:h-500px] md:w-[600px] md:h-[600px] lg:w-[800px] lg:h-[800px]"
+      class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[300px] h-[300px] sm:w-[500px] sm:h-500px] md:w-[600px] md:h-[600px] lg:w-[770px] lg:h-[770px]"
     >
       <img
         src="/images/davenid.png"
