@@ -1,15 +1,15 @@
 <template>
-  <div class="min-h-screen bg-gradient-to-b from-[#0f0c1d] to-[#1a1625] py-20">
+  <div class="min-h-screen bg-lavender py-20">
     <!-- Header section -->
-    <div class="flex justify-center items-center flex-col relative mb-20">
+    <div class="flex justify-center items-center flex-col relative mb-10">
       <div class="text-center">
         <h1
-          class="text-[45px] sm:text-[60px] md:text-[70px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-blue-400 uppercase tracking-tight"
+          class="text-[45px] sm:text-[60px] md:text-[70px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-cover to-blue-400 uppercase tracking-tight"
         >
           Projects
         </h1>
         <div
-          class="w-24 h-1 mx-auto mt-4 bg-gradient-to-r from-blue-500 to-emerald-500 rounded-full"
+          class="w-24 h-1 mx-auto  bg-gradient-to-r from-blue-500 to-emerald-500 rounded-full"
         ></div>
       </div>
     </div>
