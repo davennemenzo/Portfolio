@@ -3,7 +3,7 @@
     <page-container>
       <nav class="w-full flex items-center justify-between py-3 relative">
         <!-- Logo -->
-        <a href="#" class="text-2xl font-bold tracking-widest">DRMN</a>
+        <a href="#" class="text-2xl font-bold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-emerald-500  to-cover ">DRMN</a>
 
         <!-- Burger Menu Button (visible on mobile) -->
         <button
