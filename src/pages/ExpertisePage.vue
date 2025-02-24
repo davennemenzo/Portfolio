@@ -1,14 +1,10 @@
 <template>
   <div
-    class="min-h-[300px] md:min-h-[600px] lg:min-h-screen flex flex-col bg-cover overflow-hidden relative"
+    class="min-h-[300px] md:min-h-[600px] lg:min-h-auto pb-15 bg-lavender flex flex-col bg-cover overflow-hidden relative"
   >
     <PageContainer>
       <div class="flex flex-col justify-center items-center">
-        <div
-          class="sm:my-[70px] my-5 text-[35px] sm:text-[50px] md:text-[55px] lg:text-[60px] text-lavender font-bold uppercase whitespace-nowrap leading-none"
-        >
-          My Expertise
-        </div>
+       
 
         <!-- Skills Grid -->
         <div

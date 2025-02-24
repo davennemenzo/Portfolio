@@ -6,14 +6,15 @@
     <div class="absolute inset-0 flex flex-col justify-center items-center space-y-6 lg:space-y-10">
       <!-- UI/UX DESIGNER Sliding from Left to Right -->
       <div
-        class="text-[90px] m-0 sm:text-[150px] md:text-[160px] lg:text-[270px] whitespace-nowrap bg-blue-200 font-bold uppercase animate-slide-left-right text-center leading-none"
-      >
-        UI/UX DESIGNER
-      </div>
+  class="text-[90px] m-0 sm:text-[150px] md:text-[160px] lg:text-[270px] whitespace-nowrap bg-clip-text text-transparent bg-gradient-to-t from-cover to-blue-400 font-bold uppercase animate-slide-left-right text-center leading-none"
+>
+  UI/UX DESIGNER
+</div>
+
 
       <!-- FRONTEND DEVELOPER Sliding from Right to Left -->
       <div
-        class="text-[90px] sm:text-[150px] md:text-[160px] lg:text-[270px] whitespace-nowrap bg-blue-200 font-bold uppercase animate-slide-right-left text-center leading-none"
+        class="text-[90px] m-0 sm:text-[150px] md:text-[160px] lg:text-[270px] whitespace-nowrap bg-clip-text text-transparent bg-gradient-to-b from-cover to-blue-400 font-bold uppercase animate-slide-right-left text-center leading-none"
       >
         FRONTEND DEVELOPER
       </div>

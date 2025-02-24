@@ -52,7 +52,6 @@
           <li><a href="#" @click.prevent="scrollToSection('hero')" class="hover:text-blue-400">Home</a></li>
           <li><a href="#" @click.prevent="scrollToSection('aboutme')" class="hover:text-blue-400">About</a></li>
           <li><a href="#" @click.prevent="scrollToSection('projects')" class="hover:text-blue-400">Projects</a></li>
-          <li><a href="#" @click.prevent="scrollToSection('expertise')" class="hover:text-blue-400">Expertise</a></li>
           <li><a href="#" @click.prevent="scrollToSection('testimonials')" class="hover:text-blue-400">Testimonials</a></li>
         </ul>
       </nav>
