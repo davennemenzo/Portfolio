@@ -3,7 +3,7 @@
     <PageContainer>
       <div class="flex justify-center items-center flex-col relative mb-7">
         <h1 class="sm:mt-[70px] mt-5 text-[45px] sm:text-[60px] md:text-[70px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-cover to-blue-400 uppercase tracking-tight">About Me</h1>
-        <div class="w-24 h-1 mx-auto bg- gradient-to-r from-blue-500 to-emerald-500 rounded-full"></div>
+        <div class="w-24 h-1 mx-auto bg-gradient-to-r from-blue-500 to-emerald-500 rounded-full"></div>
       </div>
 
       <div class="container mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
