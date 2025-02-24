@@ -2,12 +2,15 @@
   <div class="min-h-screen flex flex-col bg-lavender overflow-hidden relative">
     <!-- Header section -->
     <PageContainer>
-      <div class="flex justify-center items-center flex-col relative mb-7">
+      <div class="flex justify-center items-center flex-col  relative mb-7">
         <h1
-          class="sm:mt-[70px] mt-5 text-[35px] sm:text-[50px] md:text-[55px] lg:text-[60px] text-cover font-bold uppercase leading-none"
+          class="sm:mt-[70px] mt-5 text-[45px] sm:text-[60px] md:text-[70px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-cover to-blue-400 uppercase tracking-tight"
         >
           About Me
         </h1>
+        <div
+          class="w-24 h-1 mx-auto  bg-gradient-to-r from-blue-500 to-emerald-500 rounded-full"
+        ></div>
       </div>
 
       <!-- Content section -->
@@ -33,11 +36,12 @@
             interactive, user-friendly interfaces that engage and inspire.
           </p>
           <div class="flex flex-wrap gap-3">
-            <div
-              class="p-3 border-blue-300 border-2 rounded-full text-xs w-fit"
-            >
-              UI DESIGN
-            </div>
+            <div class="p-[2px] bg-gradient-to-r from-blue-500 to-emerald-500 rounded-full w-fit">
+  <div class="p-3 bg-white rounded-full text-xs">
+    UI DESIGN
+  </div>
+</div>
+
             <div
               class="p-3 border-blue-300 border-2 rounded-full text-xs w-fit"
             >
@@ -91,6 +95,69 @@
           />
         </div>
       </div>
+
+      <div
+          class="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full max-w-7xl mx-auto mt-10"
+        >
+          <!-- UI Design Skill -->
+          <div
+            class="group relative bg-gray-100 p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg"
+          >
+            <div class="flex items-start gap-4">
+              <span class="text-xl font-bold text-lavender">01.</span>
+              <div class="space-y-4">
+                <h3 class="text-2xl font-semibold text-gray-800">
+                  User Interface Design
+                </h3>
+                <p class="text-gray-700 leading-relaxed">
+                  Creating intuitive and visually appealing interfaces that
+                  enhance user experience and engagement.
+                </p>
+                <div class="space-y-2">
+                  <h4 class="text-lg font-semibold text-gray-800">
+                    Tools & Technologies
+                  </h4>
+                  <div class="flex gap-2 flex-wrap">
+                    <img
+                      src="https://skillicons.dev/icons?i=figma,ps,"
+                      alt="Design Tools"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Frontend Development -->
+          <div
+            class="group relative bg-gray-100 p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg"
+          >
+            <div class="flex items-start gap-4">
+              <span class="text-xl font-bold text-lavender">02.</span>
+              <div class="space-y-4">
+                <h3 class="text-2xl font-semibold text-gray-800">
+                  Frontend Development
+                </h3>
+                <p class="text-gray-700 leading-relaxed">
+                  Building responsive and interactive web applications with
+                  modern frameworks and technologies.
+                </p>
+                <div class="space-y-2">
+                  <h4 class="text-lg font-semibold text-gray-800">
+                    Tools & Technologies
+                  </h4>
+                  <div class="flex gap-2 flex-wrap">
+                    <img
+                      src="https://skillicons.dev/icons?i=vue,js,css,tailwind"
+                      alt="Frontend Tools"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
     </PageContainer>
   </div>
 </template>
