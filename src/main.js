@@ -2,6 +2,8 @@ import { createApp } from 'vue';
 import App from './App.vue';
 import router from './route';
 import "./styles/main.css";
+import "preline/preline"; // Import Preline globally
+
 
 
 const app = createApp(App);
