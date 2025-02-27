@@ -1,9 +1,9 @@
 <template>
-  <div class="hs-carousel-slide flex flex-col  h-full  bg-gray-100 dark:bg-neutral-900 p-6 rounded-lg px-20">
+  <div class="hs-carousel-slide flex flex-col  h-full    bg-gray-100 dark:bg-neutral-900 p-6 rounded-lg px-20">
     <!-- Video Section -->
-    <div class="w-full max-w-full mx-auto mb-5 object-cover rounded-md overflow-hidden shadow-lg">
+    <div class="h-full flex max-w-full mx-auto mb-5 object-contain rounded-md overflow-hidden shadow-lg">
       <video
-        class="w-full  object-cover rounded-md"
+        class="w-full   rounded-md"
         autoplay
         muted
         loop
@@ -14,12 +14,12 @@
     </div>
 
     <!-- Project Title -->
-    <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
+    <h2 class="text-xl font-bold text-gray-900 dark:text-white">
       {{ project.title }}
     </h2>
 
     <!-- Project Description -->
-    <p class="text-lg text-gray-700 dark:text-gray-300 mt-3 max-w-xl">
+    <p class="text-md text-gray-500 dark:text-gray-300 mt-3 max-w-xl">
       {{ project.description }}
     </p>
 
@@ -30,7 +30,7 @@
 
     <!-- Skill Icons -->
     <div class="mt-5 flex  gap-3">
-      <img :src="project.skillIcons" :alt="project.title" class="h-10">
+      <img :src="project.skillIcons" :alt="project.title" class="h-7">
     </div>
   </div>
 </template>
