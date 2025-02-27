@@ -24,13 +24,13 @@
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full max-w-7xl mx-auto mt-10">
         <SkillCard
-          number="1"
+        
           title="User Interface Design"
           description="Creating intuitive and visually appealing interfaces that enhance user experience and engagement."
           toolsIcon="https://skillicons.dev/icons?i=figma,ps"
         />
         <SkillCard
-          number="2"
+          
           title="Frontend Development"
           description="Building responsive and interactive web applications with modern frameworks and technologies."
           toolsIcon="https://skillicons.dev/icons?i=vue,js,css,tailwind"
