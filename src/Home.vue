@@ -4,7 +4,9 @@
     <Hero id="hero"/>
     <AboutMePage id="aboutme"/>
     <ProjectsPage id="projects"/>
-    <TestimonialPage id="testimonials"/>
+    <ExpertisePage id="expertise"/>
+   <ContactPage id="contact"/>
+   <Footer/>
   </div>
 </template>
 
@@ -16,7 +18,9 @@ import "@/styles/animation.css";
 import AboutMePage from "./pages/AboutMePage.vue";
 import ProjectsPage from "./pages/ProjectsPage.vue";
 import TestimonialPage from "./pages/TestimonialPage.vue";
-
+import ExpertisePage from "./pages/ExpertisePage.vue";
+import ContactPage from "./pages/ContactPage.vue";
+import Footer from "@/components/Footer.vue";
 
 export default {
   components: {
@@ -24,7 +28,9 @@ export default {
     Hero,
     AboutMePage,
     ProjectsPage,
-    TestimonialPage,
+    ExpertisePage,
+    ContactPage,
+    Footer,
   },
 };
 </script>
