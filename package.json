@@ -17,6 +17,7 @@
     "@vitejs/plugin-vue": "^5.2.1",
     "@vue/devtools-core": "^7.7.2",
     "animate.css": "^4.1.1",
+    "lucide-vue-next": "^0.479.0",
     "preline": "^2.7.0",
     "swiper": "^11.2.4",
     "vite-plugin-inspect": "^11.0.0",
