@@ -17,7 +17,7 @@
       </div>
       <div class="project-card-text w-full text-cover">
         <h3 class="text-[17px] font-bold mb-2">{{ project.title }}</h3>
-        <p class="text-[13px] text-slate-600 mb-4">{{ project.description }}</p>
+        <p class="text-[10px] text-slate-600 mb-4">{{ project.description }}</p>
         <div
           class="text-[7px] text-white font-bold p-2 bg-emerald-500 rounded-md w-fit mb-2"
         >

@@ -1,6 +1,6 @@
 <template>
   <header class="w-full text-cover bg-lavender shadow-sm fixed top-0 left-0  z-50 ">
-    <page-container>
+    <PageContainer>
       <nav class="w-full flex items-center justify-between py-3 relative">
         <!-- Logo -->
         <a href="#" class="text-2xl font-bold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-emerald-500  to-cover ">DRMN</a>
@@ -55,7 +55,7 @@
           <li><a href="#" @click.prevent="scrollToSection('testimonials')" class="hover:text-blue-400">Testimonials</a></li>
         </ul>
       </nav>
-    </page-container>
+    </PageContainer>
   </header>
 </template>
 
