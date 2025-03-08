@@ -1,44 +1,77 @@
 <template>
-  <div class="min-h-screen bg-gradient-to-b from-[#0f0c1d] to-[#1a1625] py-20">
+  <div class="min-h-screen bg-lavender py-20">
     <!-- Header section -->
-    <div class="flex justify-center items-center flex-col relative mb-20">
+    <div class="flex justify-center items-center flex-col relative mb-6">
       <div class="text-center">
         <h1
-          class="text-[45px] sm:text-[60px] md:text-[70px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-blue-400 uppercase tracking-tight"
+          class="text-[45px] sm:text-[60px] md:text-[70px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-cover to-blue-400 uppercase tracking-tight"
         >
           Projects
         </h1>
-        <div
-          class="w-24 h-1 mx-auto mt-4 bg-gradient-to-r from-blue-500 to-emerald-500 rounded-full"
-        ></div>
+        <div class="w-24 h-1 mx-auto bg-gradient-to-r from-blue-500 to-emerald-500 rounded-full"></div>
       </div>
     </div>
 
     <!-- Content section -->
     <div class="container mx-auto px-4">
-      <div class="grid grid-cols-1 md:grid-cols-3 justify-center md:gap-20 gap-4">
-        <ProjectCard
-          v-for="project in projects"
+      <Flicking
+        :options="{
+          circular: true,
+          defaultIndex: 0,
+          autoInit: true,
+          bounce: '100%',
+          align: 'center',
+        }"
+        :plugins="plugins"
+        class="py-10 w-full"
+        @changed="onChanged"
+      >
+        <div
+          v-for="(project, index) in projects"
           :key="project.id"
-          :project="project"
-          class="w-full md:w-auto"
-        />
-      </div>
+          class="w-1/3 px-4 h-full transition-transform duration-200 ease-in-out"
+          :class="{
+            'scale-110 opacity-100': index === activeIndex, 
+            'opacity-70 scale-90': index !== activeIndex
+          }"
+        >
+          <ProjectCard :project="project" class="h-full" />
+        </div>
+        <template #viewport>
+          <div class="flicking-pagination"></div>
+        </template>
+      </Flicking>
     </div>
   </div>
 </template>
 
 <script setup>
-// Import the video using Vite's import
+import { ref } from "vue";
+import Flicking from "@egjs/vue3-flicking";
+import "@egjs/vue3-flicking/dist/flicking.css";
 import ProjectCard from "@/components/ProjectCard.vue";
 import PassafunVideo from "@/videos/Passafun.mp4";
+import { Perspective, Pagination, Fade } from "@egjs/flicking-plugins";
+import "@egjs/flicking-plugins/dist/pagination.css";
 
-const projects = [
+const plugins = [
+  new Perspective({ rotate: 0.5 }), 
+  new Fade(), 
+  new Pagination({ type: 'bullet' })
+];
+
+const activeIndex = ref(0);
+
+const onChanged = (e) => {
+  activeIndex.value = e.index; 
+  console.log("Active index:", activeIndex.value);
+};
+
+const projects = ref([
   {
     id: 1,
-    title: "Passafun: A Dynamic Quiz Game Portal",
-    description:
-      "Development of an interactive quiz platform designed to offer a variety of quizzes, personality tests, and assessments for an engaging and educational experience.",
+    title: "QuizMaster",
+    description: "An interactive quiz platform offering multiple-choice questions, personality tests, and assessments with real-time feedback.",
     category: "UI/UX DESIGN & FRONTEND DEVELOPMENT",
     videoSrc: PassafunVideo,
     skillIconsUrl: "https://skillicons.dev",
@@ -46,25 +79,77 @@ const projects = [
   },
   {
     id: 2,
-    title: "Passafun: A Dynamic Quiz Game Portal",
-    description:
-      "Development of an interactive quiz platform designed to offer a variety of quizzes, personality tests, and assessments for an engaging and educational experience.",
-    category: "UI/UX DESIGN & FRONTEND DEVELOPMENT",
+    title: "EduConnect",
+    description: "A tutor booking system that connects students with experienced tutors for personalized academic support.",
+    category: "WEB DEVELOPMENT",
     videoSrc: PassafunVideo,
     skillIconsUrl: "https://skillicons.dev",
-    skillIcons: "https://skillicons.dev/icons?i=figma,vue,tailwind,css",
+    skillIcons: "https://skillicons.dev/icons?i=vue,nodejs,mongodb,tailwind",
   },
   {
-    id: 2,
-    title: "Passafun: A Dynamic Quiz Game Portal",
-    description:
-      "Development of an interactive quiz platform designed to offer a variety of quizzes, personality tests, and assessments for an engaging and educational experience.",
-    category: "UI/UX DESIGN & FRONTEND DEVELOPMENT",
+    id: 3,
+    title: "FitTrack",
+    description: "A fitness tracking app that helps users monitor workouts, set goals, and track progress with a sleek UI.",
+    category: "MOBILE APP DEVELOPMENT",
     videoSrc: PassafunVideo,
     skillIconsUrl: "https://skillicons.dev",
-    skillIcons: "https://skillicons.dev/icons?i=figma,vue,tailwind,css",
+    skillIcons: "https://skillicons.dev/icons?i=flutter,dart,figma",
   },
-
-  // Add more projects here
-];
+  {
+    id: 4,
+    title: "GreenMarket",
+    description: "An e-commerce platform for eco-friendly products, promoting sustainable shopping and green living.",
+    category: "ECOMMERCE & UI/UX",
+    videoSrc: PassafunVideo,
+    skillIconsUrl: "https://skillicons.dev",
+    skillIcons: "https://skillicons.dev/icons?i=react,typescript,tailwind,shopify",
+  },
+  {
+    id: 5,
+    title: "SafeDrive",
+    description: "A smart driving assistant that uses AI to analyze driving habits and provide safety recommendations.",
+    category: "AI & DATA SCIENCE",
+    videoSrc: PassafunVideo,
+    skillIconsUrl: "https://skillicons.dev",
+    skillIcons: "https://skillicons.dev/icons?i=python,tensorflow,vue",
+  },
+  {
+    id: 6,
+    title: "EventSync",
+    description: "An event management system that helps users plan, organize, and collaborate on events with seamless ticketing.",
+    category: "FULL-STACK DEVELOPMENT",
+    videoSrc: PassafunVideo,
+    skillIconsUrl: "https://skillicons.dev",
+    skillIcons: "https://skillicons.dev/icons?i=vue,laravel,mysql,tailwind",
+  },
+  {
+    id: 7,
+    title: "HomeAutomation",
+    description: "A smart home system that allows users to control lights, temperature, and security remotely via mobile.",
+    category: "IOT & EMBEDDED SYSTEMS",
+    videoSrc: PassafunVideo,
+    skillIconsUrl: "https://skillicons.dev",
+    skillIcons: "https://skillicons.dev/icons?i=arduino,raspberrypi,vue",
+  }
+]);
 </script>
+
+<style>
+.flicking-viewport {
+  padding-bottom: 4rem !important;
+}
+
+.flicking-pagination .flicking-pagination-bullet {
+  width: 12px !important;
+  height: 12px !important;
+  background-color: #cfcbcb !important;
+  border-radius: 50% !important;
+  margin: 0 5px !important;
+}
+
+.flicking-pagination .flicking-pagination-bullet-active {
+  background-color: #13120b !important;
+  width: 14px !important;
+  height: 14px !important;
+}
+</style>

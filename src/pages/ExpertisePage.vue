@@ -1,78 +1,40 @@
 <template>
   <div
-    class="min-h-[300px] md:min-h-[600px] lg:min-h-screen flex flex-col bg-cover overflow-hidden relative"
+    class="min-h-auto flex-col bg-gray-200 pb-10 overflow-hidden relative"
   >
     <PageContainer>
-      <div class="flex flex-col justify-center items-center">
-        <div
-          class="sm:my-[70px] my-5 text-[35px] sm:text-[50px] md:text-[55px] lg:text-[60px] text-lavender font-bold uppercase whitespace-nowrap leading-none"
+      <div class="flex justify-center items-center flex-col relative mb-7">
+        <h1
+          class="sm:mt-[70px] mt-5 text-[45px] sm:text-[60px] md:text-[70px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-cover to-blue-400 uppercase tracking-tight"
         >
-          My Expertise
-        </div>
-
-        <!-- Skills Grid -->
+          Expertise
+        </h1>
         <div
-          class="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full max-w-7xl mx-auto"
-        >
-          <!-- UI Design Skill -->
-          <div
-            class="group relative bg-gray-100 p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg"
-          >
-            <div class="flex items-start gap-4">
-              <span class="text-xl font-bold text-lavender">01.</span>
-              <div class="space-y-4">
-                <h3 class="text-2xl font-semibold text-gray-800">
-                  User Interface Design
-                </h3>
-                <p class="text-gray-700 leading-relaxed">
-                  Creating intuitive and visually appealing interfaces that
-                  enhance user experience and engagement.
-                </p>
-                <div class="space-y-2">
-                  <h4 class="text-lg font-semibold text-gray-800">
-                    Tools & Technologies
-                  </h4>
-                  <div class="flex gap-2 flex-wrap">
-                    <img
-                      src="https://skillicons.dev/icons?i=figma,ps,ai,xd"
-                      alt="Design Tools"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          class="w-24 h-1 mx-auto bg-gradient-to-r from-blue-500 to-emerald-500 rounded-full"
+        ></div>
+      </div>
 
-          <!-- Frontend Development -->
-          <div
-            class="group relative bg-gray-100 p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg"
-          >
-            <div class="flex items-start gap-4">
-              <span class="text-xl font-bold text-lavender">02.</span>
-              <div class="space-y-4">
-                <h3 class="text-2xl font-semibold text-gray-800">
-                  Frontend Development
-                </h3>
-                <p class="text-gray-700 leading-relaxed">
-                  Building responsive and interactive web applications with
-                  modern frameworks and technologies.
-                </p>
-                <div class="space-y-2">
-                  <h4 class="text-lg font-semibold text-gray-800">
-                    Tools & Technologies
-                  </h4>
-                  <div class="flex gap-2 flex-wrap">
-                    <img
-                      src="https://skillicons.dev/icons?i=vue,react,js,ts,html,css,tailwind"
-                      alt="Frontend Tools"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
+      <div
+        class="grid grid-cols-1 lg:grid-cols-3 gap-6 w-full max-w-7xl mx-auto mt-10"
+      >
+        <SkillCard
+          title="User Interface Design"
+          :icon="Component"
+          description="Creating intuitive and visually appealing interfaces that enhance user experience and engagement."
+          toolsIcon="https://skillicons.dev/icons?i=figma,ps"
+        />
+        <SkillCard
+          title="Frontend Development"
+          description="Building responsive and interactive web applications with modern frameworks and technologies."
+          :icon="Code"
+          toolsIcon="https://skillicons.dev/icons?i=vue,js,css,tailwind"
+        />
+        <SkillCard
+          title="Mobile Design"
+          description="Creating user-friendly and visually appealing mobile interfaces with a focus on responsiveness and accessibility."
+          :icon="Smartphone"
+          toolsIcon="https://skillicons.dev/icons?i=figma,xd,tailwind,css"
+        />
       </div>
     </PageContainer>
   </div>
@@ -80,4 +42,16 @@
 
 <script setup>
 import PageContainer from "@/components/PageContainer.vue";
+import SkillCard from "@/components/SkillCard.vue";
+import { Component, Code, Smartphone } from 'lucide-vue-next';
 </script>
+
+<style scoped>
+.animate__animated {
+  --animate-duration: 1.2s;
+}
+
+.animate__fadeIn {
+  animation-delay: 0.3s;
+}
+</style>

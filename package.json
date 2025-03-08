@@ -9,18 +9,27 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@egjs/flicking-plugins": "^4.7.1",
+    "@egjs/vue3-flicking": "^4.12.0",
     "@mdi/font": "^7.4.47",
-    "@tailwindcss/vite": "^4.0.3",
+    "@preline/carousel": "^2.5.2",
+    "@tailwindcss/vite": "^4.0.8",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "@vue/devtools-core": "^7.7.2",
     "animate.css": "^4.1.1",
+    "lucide-vue-next": "^0.479.0",
+    "preline": "^2.7.0",
+    "swiper": "^11.2.4",
+    "vite-plugin-inspect": "^11.0.0",
+    "vite-plugin-vue-inspector": "^5.3.1",
     "vue": "^3.5.13",
     "vue-router": "^4.5.0"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^5.2.1",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.5.1",
     "tailwindcss": "^4.0.3",
-    "vite": "^6.0.11",
-    "vite-plugin-vue-devtools": "^7.7.0"
+    "vite": "^6.1.1",
+    "vite-plugin-vue-devtools": "^7.7.2"
   }
 }
