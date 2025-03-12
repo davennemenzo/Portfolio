@@ -1,66 +1,54 @@
 <template>
-  <div class="min-h-auto flex-col bg-lavender pb-2 overflow-hidden relative">
-    <PageContainer>
-      <div class="flex justify-center items-center flex-col relative mb-7">
-        <h1
-          class=" mt-5 text-[35px] sm:text-[40px] md:text-[50px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-cover to-blue-400 uppercase tracking-tight"
-        >
-          Let's Work Together
-        </h1>
-        <div
-          class="w-24 h-1 mx-auto bg-gradient-to-r from-blue-500 to-emerald-500 rounded-full"
-        ></div>
-      </div>
+  <div
+    class="min-h-screen flex flex-col items-center justify-center bg-secondary pb-2 overflow-hidden relative"
+  >
+    <!-- Contact Title (Fixed scaling inside h1) -->
+    <h1 class="text-main barlow-condensed-black tracking-tighter uppercase  mb-6 scale-y-[29] scale-x-[19.7] ">
+      Contact
+    </h1>
 
-      <div class="flex justify-center items-center flex-col relative mb-7">
-        <p class="text-lg">davennemenzo@gmail.com</p>
-        <p class="text-lg">+63 94532=482113</p>
-        <div class="flex gap-4 mt-4">
-          <a
-            href="https://www.facebook.com/daven.nemenzo/"
-            target="_blank "
-            class="text-gray-700 hover:text-blue-600 transition-colors"
-          >
-            <Facebook class="w-8 h-8" />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/daven-reez-nemenzo-337a07314/"
-            target="_blank"
-            class="text-gray-700 hover:text-blue-500 transition-colors"
-          >
-            <Linkedin class="w-8 h-8" />
-          </a>
-          <a
-            href="https://github.com/davennemenzo"
-            target="_blank"
-            class="text-gray-700 hover:text-gray-900 transition-colors"
-          >
-            <Github class="w-8 h-8" />
-          </a>
-          <a
-            href="https://www.instagram.com/reezdaven/"
-            target="_blank"
-            class="text-gray-700 hover:text-pink-600 transition-colors"
-          >
-            <Instagram class="w-8 h-8" />
-          </a>
-        </div>
+    <!-- Contact Info -->
+    <div class="flex league flex-col items-center gap-2 text-tertiary text-center absolute bottom-4 ">
+      <p class="text-lg tracking-tighter">DAVENNEMENZO@GMAIL.COM</p>
+      <p class="text-lg ">+63 9453482113</p>
+
+      <!-- Social Media Links -->
+      <div class="flex gap-6 mt-2">
+        <a
+          href="https://www.facebook.com/daven.nemenzo/"
+          target="_blank"
+          class="hover:text-blue-600 transition-colors"
+        >
+          <Facebook class="w-8 h-8" />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/daven-reez-nemenzo-337a07314/"
+          target="_blank"
+          class="hover:text-blue-500 transition-colors"
+        >
+          <Linkedin class="w-8 h-8" />
+        </a>
+        <a
+          href="https://github.com/davennemenzo"
+          target="_blank"
+          class="hover:text-gray-900 transition-colors"
+        >
+          <Github class="w-8 h-8" />
+        </a>
+        <a
+          href="https://www.instagram.com/reezdaven/"
+          target="_blank"
+          class="hover:text-pink-600 transition-colors"
+        >
+          <Instagram class="w-8 h-8" />
+        </a>
       </div>
-    </PageContainer>
+      <p class="mt-7 text-[12px]">© 2025 Daven Nemenzo. All rights reserved.</p>
+    </div>
+    
   </div>
 </template>
 
 <script setup>
-import PageContainer from "@/components/PageContainer.vue";
 import { Facebook, Linkedin, Github, Instagram } from "lucide-vue-next";
 </script>
-
-<style scoped>
-.animate__animated {
-  --animate-duration: 1.2s;
-}
-
-.animate__fadeIn {
-  animation-delay: 0.3s;
-}
-</style>

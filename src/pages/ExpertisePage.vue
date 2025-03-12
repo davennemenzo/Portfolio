@@ -1,17 +1,15 @@
 <template>
   <div
-    class="min-h-auto flex-col bg-gray-200 pb-10 overflow-hidden relative"
+    class="min-h-auto flex-col bg-main pb-10 overflow-hidden relative"
   >
     <PageContainer>
       <div class="flex justify-center items-center flex-col relative mb-7">
         <h1
-          class="sm:mt-[70px] mt-5 text-[45px] sm:text-[60px] md:text-[70px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-cover to-blue-400 uppercase tracking-tight"
+          class=" text-[45px] sm:text-[60px] md:text-[70px] font-bold text-tertiary uppercase tracking-tight"
         >
-          Expertise
+          About Me
         </h1>
-        <div
-          class="w-24 h-1 mx-auto bg-gradient-to-r from-blue-500 to-emerald-500 rounded-full"
-        ></div>
+        <div class="w-24 h-1 mx-auto bg-tertiary rounded-full"></div>
       </div>
 
       <div

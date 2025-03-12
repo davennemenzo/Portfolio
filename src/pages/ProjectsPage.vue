@@ -1,14 +1,14 @@
 <template>
-  <div class="min-h-screen bg-lavender py-20">
+  <div class="min-h-screen bg-main sm:py-[50px] py-5 ">
     <!-- Header section -->
     <div class="flex justify-center items-center flex-col relative mb-6">
       <div class="text-center">
         <h1
-          class="text-[45px] sm:text-[60px] md:text-[70px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-cover to-blue-400 uppercase tracking-tight"
+          class=" text-[45px] sm:text-[60px] md:text-[70px] font-bold text-tertiary uppercase tracking-tight"
         >
           Projects
         </h1>
-        <div class="w-24 h-1 mx-auto bg-gradient-to-r from-blue-500 to-emerald-500 rounded-full"></div>
+        <div class="w-24 h-1 mx-auto bg-tertiary rounded-full"></div>
       </div>
     </div>
 
@@ -142,13 +142,13 @@ const projects = ref([
 .flicking-pagination .flicking-pagination-bullet {
   width: 12px !important;
   height: 12px !important;
-  background-color: #cfcbcb !important;
+  background-color: #B7F9FF !important;
   border-radius: 50% !important;
   margin: 0 5px !important;
 }
 
 .flicking-pagination .flicking-pagination-bullet-active {
-  background-color: #13120b !important;
+  background-color: #011E76 !important;
   width: 14px !important;
   height: 14px !important;
 }

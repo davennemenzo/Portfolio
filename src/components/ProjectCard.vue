@@ -35,14 +35,14 @@
 
     <!-- Desktop Layout (rely on parent grid) -->
     <div
-      class="hidden md:flex flex-col items-center rounded-3xl p-[2px] w-full bg-gradient-to-r from-blue-500 via-purple-500 to-emerald-500 relative group overflow-hidden"
+      class="hidden md:flex flex-col items-center rounded-3xl p-[2px] w-full relative group overflow-hidden"
     >
       <!-- Inner content with solid background -->
       <div
         class="project-card-content flex flex-col items-center rounded-2xl p-4 w-full bg-slate-200"
       >
         <div
-          class="project-card-media w-full mb-2 mx-auto border-b-2 overflow-hidden"
+          class="project-card-media w-full mb-2 mx-auto border-b-2 border-secondary overflow-hidden"
         >
           <video
             class="w-full h-full object-cover rounded-xl transform-gpu"
@@ -57,7 +57,7 @@
 
         <div class="project-card-text flex flex-col gap-y-4 w-full">
           <div class="flex flex-col gap-y-2">
-            <h3 class="text-[20px] font-bold transform-gpu">
+            <h3 class="text-[20px] font-bold transform-gpu text-secondary">
               {{ project.title }}
             </h3>
             <p class="text-[15px] text-slate-700 transform-gpu">
@@ -67,7 +67,7 @@
 
           <div class="flex flex-col gap-y-2">
             <div
-              class="text-[9px] font-bold p-2 bg-emerald-500 text-white w-fit rounded-lg transform-gpu"
+              class="text-[9px] font-bold p-2 bg-secondary text-tertiary w-fit rounded-lg transform-gpu"
             >
               {{ project.category }}
             </div>
@@ -76,7 +76,7 @@
               <img
                 :src="project.skillIcons"
                 alt="Project Skills"
-                class="w-32 h-8 transform-gpu"
+                class=" h-8 transform-gpu object-contain"
               />
             </a>
           </div>
