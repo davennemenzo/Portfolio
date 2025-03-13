@@ -3,17 +3,17 @@
     class="min-h-screen flex flex-col items-center justify-center bg-secondary pb-2 overflow-hidden relative"
   >
     <!-- Contact Title (Fixed scaling inside h1) -->
-    <h1 class="text-main barlow-condensed-black tracking-tighter uppercase  mb-6 scale-y-[29] scale-x-[19.7] ">
+    <h1 class="text-main league font-bold tracking-tight uppercase  mb-6 scale-y-[35] scale-x-[36] top-60 absolute">
       Contact
     </h1>
 
     <!-- Contact Info -->
-    <div class="flex league flex-col items-center gap-2 text-tertiary text-center absolute bottom-4 ">
-      <p class="text-lg tracking-tighter">DAVENNEMENZO@GMAIL.COM</p>
-      <p class="text-lg ">+63 9453482113</p>
+    <div class="flex league flex-col items-center gap-2 text-tertiary text-center absolute bottom-10 ">
+      <p class="text-xl tracking-widest">DAVENNEMENZO@GMAIL.COM</p>
+      <p class="text-xl tracking-widest">+63 9453482113</p>
 
       <!-- Social Media Links -->
-      <div class="flex gap-6 mt-2">
+      <div class="flex gap-4 mt-2">
         <a
           href="https://www.facebook.com/daven.nemenzo/"
           target="_blank"
@@ -43,7 +43,7 @@
           <Instagram class="w-8 h-8" />
         </a>
       </div>
-      <p class="mt-7 text-[12px]">© 2025 Daven Nemenzo. All rights reserved.</p>
+      <p class="mt-7 text-[12px] poppins">© 2025 Daven Nemenzo. All rights reserved.</p>
     </div>
     
   </div>

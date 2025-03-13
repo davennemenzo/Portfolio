@@ -1,12 +1,12 @@
 <template>
   <div
-    class="min-h-[300px] md:min-h-[600px] lg:min-h-screen flex flex-col bg-main overflow-hidden relative"
+    class="min-h-[300px] md:min-h-[600px] lg:min-h-screen flex flex-col bg-main overflow-hidden relative league" 
   >
     <!-- Text container -->
     <div class="absolute inset-0 flex flex-col justify-center items-center space-y-6 lg:space-y-10">
       <!-- UI/UX DESIGNER Sliding from Left to Right -->
       <div
-  class="text-[90px] m-0 sm:text-[150px] md:text-[160px] lg:text-[270px] whitespace-nowrap text-tertiary font-bold uppercase animate-slide-left-right text-center leading-none"
+  class="text-[90px] m-0 sm:text-[150px] md:text-[160px] lg:text-[270px] whitespace-nowrap text-tertiary font-bold uppercase tracking-wide animate-slide-left-right text-center leading-none"
 >
   UI/UX DESIGNER
 </div>
@@ -14,7 +14,7 @@
 
       <!-- FRONTEND DEVELOPER Sliding from Right to Left -->
       <div
-        class="text-[90px] m-0 sm:text-[150px] md:text-[160px] lg:text-[270px] whitespace-nowrap text-secondary font-bold uppercase animate-slide-right-left text-center leading-none"
+        class="text-[90px] m-0 sm:text-[150px] md:text-[160px] lg:text-[270px] whitespace-nowrap text-secondary font-bold uppercase tracking-wide animate-slide-right-left text-center leading-none"
       >
         FRONTEND DEVELOPER
       </div>

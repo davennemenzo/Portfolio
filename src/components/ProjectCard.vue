@@ -1,86 +1,51 @@
 <template>
-  <div class="project-card">
-    <!-- Mobile Layout (default) -->
+  <div
+    class="project-card flex flex-col items-center rounded-3xl p-4 w-full relative group overflow-hidden bg-slate-200"
+  >
+    <!-- Media Section -->
     <div
-      class="md:hidden flex flex-col items-center border w-full rounded-lg bg-slate-200 p-4"
+      class="project-card-media w-full mb-3 border-b-2 border-secondary overflow-hidden"
     >
-      <div class="project-card-media w-full mb-3 border-b-2">
-        <video
-          class="w-full h-full object-contain rounded-md transform-gpu"
-          autoplay
-          muted
-          loop
-          playsinline
+      <video
+        class="w-full h-full object-cover rounded-xl transform-gpu"
+        autoplay
+        muted
+        loop
+        playsinline
+      >
+        <source :src="project.videoSrc" type="video/mp4" />
+      </video>
+    </div>
+
+    <!-- Text Section -->
+    <div class="project-card-text flex flex-col gap-y-4 w-full">
+      <div class="flex flex-col gap-y-2">
+        <h3
+          class="text-[16px] sm:text-[18px] md:text-[20px] lg:text-[22px] font-bold transform-gpu text-secondary"
         >
-          <source :src="project.videoSrc" type="video/mp4" />
-        </video>
+          {{ project.title }}
+        </h3>
+        <p
+          class="text-[12px] sm:text-[14px] md:text-[15px] lg:text-[16px] text-slate-700 transform-gpu"
+        >
+          {{ project.description }}
+        </p>
       </div>
-      <div class="project-card-text w-full text-cover">
-        <h3 class="text-[17px] font-bold mb-2">{{ project.title }}</h3>
-        <p class="text-[10px] text-slate-600 mb-4">{{ project.description }}</p>
+
+      <div class="flex flex-col gap-y-2">
         <div
-          class="text-[7px] text-white font-bold p-2 bg-emerald-500 rounded-md w-fit mb-2"
+          class="text-[8px] sm:text-[9px] md:text-[10px] lg:text-[11px] font-bold p-2 bg-secondary text-tertiary w-fit rounded-lg transform-gpu"
         >
           {{ project.category }}
         </div>
+
         <a :href="project.skillIconsUrl" target="_blank">
           <img
             :src="project.skillIcons"
             alt="Project Skills"
-            class="w-28 h-7"
+            class="h-6 sm:h-7 md:h-8 lg:h-9 transform-gpu object-contain"
           />
         </a>
-      </div>
-    </div>
-
-    <!-- Desktop Layout (rely on parent grid) -->
-    <div
-      class="hidden md:flex flex-col items-center rounded-3xl p-[2px] w-full relative group overflow-hidden"
-    >
-      <!-- Inner content with solid background -->
-      <div
-        class="project-card-content flex flex-col items-center rounded-2xl p-4 w-full bg-slate-200"
-      >
-        <div
-          class="project-card-media w-full mb-2 mx-auto border-b-2 border-secondary overflow-hidden"
-        >
-          <video
-            class="w-full h-full object-cover rounded-xl transform-gpu"
-            autoplay
-            muted
-            loop
-            playsinline
-          >
-            <source :src="project.videoSrc" type="video/mp4" />
-          </video>
-        </div>
-
-        <div class="project-card-text flex flex-col gap-y-4 w-full">
-          <div class="flex flex-col gap-y-2">
-            <h3 class="text-[20px] font-bold transform-gpu text-secondary">
-              {{ project.title }}
-            </h3>
-            <p class="text-[15px] text-slate-700 transform-gpu">
-              {{ project.description }}
-            </p>
-          </div>
-
-          <div class="flex flex-col gap-y-2">
-            <div
-              class="text-[9px] font-bold p-2 bg-secondary text-tertiary w-fit rounded-lg transform-gpu"
-            >
-              {{ project.category }}
-            </div>
-
-            <a :href="project.skillIconsUrl" target="_blank">
-              <img
-                :src="project.skillIcons"
-                alt="Project Skills"
-                class=" h-8 transform-gpu object-contain"
-              />
-            </a>
-          </div>
-        </div>
       </div>
     </div>
   </div>
