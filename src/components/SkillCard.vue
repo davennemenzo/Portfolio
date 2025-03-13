@@ -2,7 +2,7 @@
   <div
     class="group relative bg-lavender p-6 rounded-xl shadow-md transition-all duration-300 hover:shadow-lg"
   >
-    <div class="flex flex-col justify-between h-full">
+    <div class="flex flex-col justify-between h-full ">
       <!-- Top Section: Icon, Title, Description -->
       <div class="space-y-4 mb-2">
         <div class="flex items-center gap-4">

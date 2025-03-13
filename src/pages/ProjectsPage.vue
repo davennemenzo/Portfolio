@@ -4,7 +4,7 @@
     <div class="flex justify-center items-center flex-col relative mb-6">
       <div class="text-center">
         <h1
-          class=" text-[45px] sm:text-[60px] md:text-[70px] font-bold text-tertiary uppercase tracking-tight"
+          class=" text-[45px] sm:text-[60px] md:text-[70px] font-bold text-tertiary uppercase tracking-wide league"
         >
           Projects
         </h1>
