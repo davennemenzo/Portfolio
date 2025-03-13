@@ -1,13 +1,14 @@
 <template>
+  <!-- Mobile Layout -->
   <div
-    class="project-card flex flex-col items-center rounded-3xl p-4 w-full relative group overflow-hidden bg-slate-200"
+    class="md:hidden relative flex flex-col items-center p-4 w-[220px] h-auto sm:w-[250px] sm:h-[350px] rounded-3xl bg-gray-200 group overflow-hidden transform-gpu"
   >
     <!-- Media Section -->
     <div
-      class="project-card-media w-full mb-3 border-b-2 border-secondary overflow-hidden"
+      class="w-full h-25 sm:h-48 mb-3 border-b-2 border-secondary overflow-hidden transform-gpu transition-all duration-500 ease-in-out"
     >
       <video
-        class="w-full h-full object-cover rounded-xl transform-gpu"
+        class="w-full h-full object-cover rounded-xl"
         autoplay
         muted
         loop
@@ -18,15 +19,17 @@
     </div>
 
     <!-- Text Section -->
-    <div class="project-card-text flex flex-col gap-y-4 w-full">
+    <div
+      class="flex flex-col gap-y-4 w-full transform-gpu transition-all duration-500 ease-in-out"
+    >
       <div class="flex flex-col gap-y-2">
         <h3
-          class="text-[16px] sm:text-[18px] md:text-[20px] lg:text-[22px] font-bold transform-gpu text-secondary"
+          class="text-secondary font-bold transform-gpu transition-all duration-500 ease-in-out text-[14px]"
         >
           {{ project.title }}
         </h3>
         <p
-          class="text-[12px] sm:text-[14px] md:text-[15px] lg:text-[16px] text-slate-700 transform-gpu"
+          class="text-slate-700 transform-gpu transition-all duration-500 ease-in-out text-[10px]"
         >
           {{ project.description }}
         </p>
@@ -34,7 +37,7 @@
 
       <div class="flex flex-col gap-y-2">
         <div
-          class="text-[8px] sm:text-[9px] md:text-[10px] lg:text-[11px] font-bold p-2 bg-secondary text-tertiary w-fit rounded-lg transform-gpu"
+          class="w-fit p-2 font-bold bg-secondary text-tertiary rounded-lg transform-gpu text-[8px]"
         >
           {{ project.category }}
         </div>
@@ -43,7 +46,61 @@
           <img
             :src="project.skillIcons"
             alt="Project Skills"
-            class="h-6 sm:h-7 md:h-8 lg:h-9 transform-gpu object-contain"
+            class="h-6 object-contain transform-gpu"
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Desktop Layout -->
+  <div
+    class="hidden md:flex relative flex-col items-center p-6 w-full rounded-3xl bg-gray-200 group overflow-hidden transform-gpu"
+  >
+    <!-- Media Section -->
+    <div
+      class="w-full mb-3 border-b-2 border-secondary overflow-hidden transform-gpu transition-all duration-500 ease-in-out"
+    >
+      <video
+        class="w-full h-full object-cover rounded-xl"
+        autoplay
+        muted
+        loop
+        playsinline
+      >
+        <source :src="project.videoSrc" type="video/mp4" />
+      </video>
+    </div>
+
+    <!-- Text Section -->
+    <div
+      class="flex flex-col gap-y-4 w-full transform-gpu transition-all duration-500 ease-in-out"
+    >
+      <div class="flex flex-col gap-y-2">
+        <h3
+          class="text-secondary font-bold transform-gpu transition-all duration-500 ease-in-out text-[20px] lg:text-[22px]"
+        >
+          {{ project.title }}
+        </h3>
+        <p
+          class="text-slate-700 transform-gpu transition-all duration-500 ease-in-out text-[15px] lg:text-[16px]"
+        >
+          {{ project.description }}
+        </p>
+      </div>
+
+      <div class="flex flex-col gap-y-2">
+        <div
+          class="w-fit p-2 font-bold bg-secondary text-tertiary rounded-lg transform-gpu text-[10px] lg:text-[11px]"
+        >
+          {{ project.category }}
+        </div>
+
+        <a :href="project.skillIconsUrl" target="_blank">
+          <img
+            :src="project.skillIcons"
+            alt="Project Skills"
+            class="h-8 lg:h-9 object-contain transform-gpu"
           />
         </a>
       </div>
@@ -60,47 +117,3 @@ defineProps({
 });
 </script>
 
-<style scoped>
-.project-card {
-  transform-origin: center;
-  transform-style: preserve-3d;
-  backface-visibility: hidden;
-}
-
-.project-card-content {
-  transform-origin: center;
-  transform-style: preserve-3d;
-  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.project-card-media {
-  transform-origin: center;
-  transform-style: preserve-3d;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  backface-visibility: hidden;
-}
-
-.project-card-text {
-  transform-origin: center;
-  transform-style: preserve-3d;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  backface-visibility: hidden;
-}
-
-/* Prevent text from becoming blurry during scaling */
-h3,
-p,
-div {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* Optimize performance */
-video,
-img {
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
-}
-</style>
