@@ -1,11 +1,9 @@
 <template>
-  <div class="min-h-screen bg-main sm:py-[50px] py-5">
+  <div class="min-h-auto bg-main sm:py-[50px] py-5">
     <!-- Header section -->
     <div class="flex justify-center items-center flex-col relative mb-6">
       <div class="text-center">
-        <h1
-          class="text-[45px] sm:text-[60px] md:text-[70px] font-bold text-tertiary uppercase tracking-wide league"
-        >
+        <h1 class="text-[8vw] sm:text-[60px] md:text-[70px] font-bold text-tertiary uppercase tracking-wide league">
           Projects
         </h1>
         <div class="w-24 h-1 mx-auto bg-tertiary rounded-full"></div>
@@ -13,7 +11,7 @@
     </div>
 
     <!-- Content section -->
-    <div class="sm:container sm:mx-auto sm:px-4">
+    <div class="sm:container sm:mx-auto">
       <Flicking
         :options="{
           circular: true,
@@ -21,21 +19,23 @@
           autoInit: true,
           bounce: '100%',
           align: 'center',
+          duration: 500, // Smoother transition
+          autoResize: true, // Improves responsiveness
         }"
         :plugins="plugins"
-        class="py-5 sm:py-10 w-full"
+        class="py-2 sm:py-10 w-full"
         @changed="onChanged"
       >
         <div
           v-for="(project, index) in projects"
           :key="project.id"
-          class="flex justify-center w-full sm:w-1/3 px-2x sm:px-4 h-full transition-transform duration-200 ease-in-out"
+          class="flex justify-center sm:w-1/3 w-[40vw] h-auto transition-transform duration-500 ease-out"
           :class="{
-            'scale-110 opacity-100': index === activeIndex,
-            'opacity-70 scale-90': index !== activeIndex,
+            'sm:scale-80 md:scale-95 lg:scale-105 scale-70 opacity-100': index === activeIndex,
+            'opacity-70 sm:scale-75 md:scale-85 lg:scale-95 scale-65': index !== activeIndex,
           }"
         >
-          <ProjectCard :project="project" class="h-full" />
+          <ProjectCard :project="project" class="w-full h-full" />
         </div>
         <template #viewport>
           <div class="flicking-pagination"></div>
@@ -64,7 +64,6 @@ const activeIndex = ref(0);
 
 const onChanged = (e) => {
   activeIndex.value = e.index;
-  console.log("Active index:", activeIndex.value);
 };
 
 const projects = ref([
@@ -148,16 +147,16 @@ const projects = ref([
 }
 
 .flicking-pagination .flicking-pagination-bullet {
-  width: 12px !important;
-  height: 12px !important;
+  width: 10px !important;
+  height: 10px !important;
   background-color: #b7f9ff !important;
   border-radius: 50% !important;
-  margin: 0 5px !important;
+  margin: 0 4px !important;
 }
 
 .flicking-pagination .flicking-pagination-bullet-active {
   background-color: #011e76 !important;
-  width: 14px !important;
-  height: 14px !important;
+  width: 12px !important;
+  height: 12px !important;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div
-    class="min-h-auto flex-col bg-main pb-10 overflow-hidden relative"
+    class="min-h-auto flex-col bg-main  overflow-hidden relative py-10"
   >
     <PageContainer>
       <div class="flex justify-center items-center flex-col relative mb-7">
@@ -13,7 +13,7 @@
       </div>
 
       <div
-        class="grid grid-cols-1 lg:grid-cols-3 gap-6 w-full max-w-7xl mx-auto mt-10"
+        class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-4 md:gap-4 lg:gap-6 xl:gap-10 w-full max-w-7xl mx-auto pb-20"
       >
         <SkillCard
           title="User Interface Design"
