@@ -1,12 +1,21 @@
 <template>
-  <div class="min-h-auto bg-main sm:py-[50px] py-5">
+  <div
+    class="min-h-auto sm:py-[50px] py-5"
+    :style="{ backgroundColor: themeStore.currentColors.main }"
+  >
     <!-- Header section -->
     <div class="flex justify-center items-center flex-col relative mb-6">
       <div class="text-center">
-        <h1 class="text-[8vw] sm:text-[60px] md:text-[70px] font-bold text-tertiary uppercase tracking-wide league">
+        <h1
+          class="text-[8vw] sm:text-[60px] md:text-[70px] font-bold uppercase tracking-wide league"
+          :style="{ color: themeStore.currentColors.tertiary }"
+        >
           Projects
         </h1>
-        <div class="w-24 h-1 mx-auto bg-tertiary rounded-full"></div>
+        <div
+          class="w-24 h-1 mx-auto rounded-full"
+          :style="{ backgroundColor: themeStore.currentColors.tertiary }"
+        ></div>
       </div>
     </div>
 
@@ -19,8 +28,8 @@
           autoInit: true,
           bounce: '100%',
           align: 'center',
-          duration: 500, // Smoother transition
-          autoResize: true, // Improves responsiveness
+          duration: 500,
+          autoResize: true,
         }"
         :plugins="plugins"
         class="py-2 sm:py-10 w-full"
@@ -29,16 +38,22 @@
         <div
           v-for="(project, index) in projects"
           :key="project.id"
-          class="flex justify-center sm:w-1/3 w-[40vw] h-auto transition-transform duration-500 ease-out"
+          class="flex justify-center sm:w-1/3 w-[40vw] h-auto transition-transform duration-500 ease-out mx-4 lg:mx-0"
           :class="{
-            'sm:scale-80 md:scale-95 lg:scale-105 scale-70 opacity-100': index === activeIndex,
-            'opacity-70 sm:scale-75 md:scale-85 lg:scale-95 scale-65': index !== activeIndex,
+            'sm:scale-80 md:scale-95 lg:scale-105 scale-84 opacity-100': index === activeIndex,
+            'opacity-90 sm:scale-75 md:scale-85 lg:scale-95 scale-65': index !== activeIndex,
           }"
         >
           <ProjectCard :project="project" class="w-full h-full" />
         </div>
         <template #viewport>
-          <div class="flicking-pagination"></div>
+          <div class="flicking-pagination"
+          :style="{
+      backgroundColor: themeStore.currentColors.main,
+      '--pagination-active': themeStore.currentColors.secondary,
+      '--pagination-inactive': themeStore.currentColors.tertiary,
+    }"
+          ></div>
         </template>
       </Flicking>
     </div>
@@ -47,12 +62,15 @@
 
 <script setup>
 import { ref } from "vue";
+import { useThemeStore } from "@/stores/themeStore"; // Ensure this is your Pinia store
 import Flicking from "@egjs/vue3-flicking";
 import "@egjs/vue3-flicking/dist/flicking.css";
 import ProjectCard from "@/components/ProjectCard.vue";
 import PassafunVideo from "@/videos/Passafun.mp4";
 import { Perspective, Pagination, Fade } from "@egjs/flicking-plugins";
 import "@egjs/flicking-plugins/dist/pagination.css";
+
+const themeStore = useThemeStore();
 
 const plugins = [
   new Perspective({ rotate: 0.5 }),
@@ -145,18 +163,30 @@ const projects = ref([
 .flicking-viewport {
   padding-bottom: 4rem !important;
 }
+@media (max-width: 640px) {
+  /* Adjust for mobile screens */
+  .flicking-viewport {
+    padding-bottom: 1rem !important;
+  }
+}
+@media (max-width: 768px) {
+  /* Adjust for mobile screens */
+  .flicking-viewport {
+    padding-bottom: 2rem !important;
+  }
+}
 
 .flicking-pagination .flicking-pagination-bullet {
   width: 10px !important;
   height: 10px !important;
-  background-color: #b7f9ff !important;
+  background-color: var(--pagination-inactive) !important;
   border-radius: 50% !important;
   margin: 0 4px !important;
 }
 
 .flicking-pagination .flicking-pagination-bullet-active {
-  background-color: #011e76 !important;
+  background-color: var(--pagination-active) !important;
   width: 12px !important;
-  height: 12px !important;
+  height: 12px;
 }
 </style>

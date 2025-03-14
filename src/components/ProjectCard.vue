@@ -8,7 +8,8 @@
     <!-- Media Section -->
     <div class="w-full flex flex-col sm:gap-y-4 gap-y-2">
       <div
-        class="w-full border-b-2 border-secondary overflow-hidden transition-all duration-500 ease-in-out"
+        class="w-full border-b-2  overflow-hidden transition-all duration-500 ease-in-out"
+        :style="{ color: themeStore.currentColors.secondary }"
         :class="mediaHeight"
       >
         <video class="w-full h-full object-cover rounded-t-xl" autoplay muted loop playsinline>
@@ -16,17 +17,21 @@
         </video>
       </div>
       <div class="flex flex-col gap-y-2">
-        <h3 class="text-secondary font-bold leading-tight" :class="titleSize">{{ project.title }}</h3>
+        <h3 class=" font-bold leading-tight"
+        :style="{ color: themeStore.currentColors.secondary }"
+        :class="titleSize">{{ project.title }}</h3>
         <p class="text-slate-700 leading-relaxed" :class="descSize">{{ project.description }}</p>
       </div>
     </div>
 
     <!-- Text Section -->
     <div class="flex flex-col md:gap-y-3 gap-y-2">
-      <div class="w-fit p-2 font-bold bg-secondary text-tertiary rounded-lg" :class="categorySize">
+      <div class="w-fit p-2 font-bold  text-tertiary rounded-lg"
+      :style="{ color: themeStore.currentColors.tertiary, backgroundColor: themeStore.currentColors.secondary }"
+      :class="categorySize">
         {{ project.category }}
       </div>
-      <a :href="project.skillIconsUrl" target="_blank">
+      <a target="_blank">
         <img :src="project.skillIcons" alt="Project Skills" class="object-contain" :class="iconSize" />
       </a>
     </div>
@@ -35,7 +40,9 @@
 
 <script setup>
 import { computed } from 'vue';
+import { useThemeStore } from "@/stores/themeStore";
 
+const themeStore = useThemeStore();
 const props = defineProps({
   project: {
     type: Object,
@@ -46,7 +53,7 @@ const props = defineProps({
 // Dynamic height layout
 const layoutClasses = computed(() => ({
   'min-h-[200px] h-auto sm:min-h-[300px] lg:min-h-[350px]': true, // Ensures the card has a min height but expands dynamically
-  'min-w-[280px] sm:w-[30vw] md:w-[40vw] lg:w-[50vw] xl:w-[40vw]': true, // Responsive width
+  'min-w-[280px] sm:w-[30vw] md:min-w-[320px] lg:min-w-[360px] ': true, // Responsive width
   'p-4 sm:p-3 md:p-4': true, // Dynamic padding
 }));
 

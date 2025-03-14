@@ -6,10 +6,16 @@
       <!-- Top Section: Icon, Title, Description -->
       <div class="space-y-4 mb-3">
         <div class="flex items-center gap-2">
-          <div class="p-2 border-2 border-main w-fit rounded-lg">
-            <component :is="icon" class="w-4 h-4 text-secondary" />
+          <div class="p-2 border-2 w-fit rounded-lg"
+          :style="{ color: themeStore.currentColors.secondary }"
+          >
+            <component :is="icon" class="w-4 h-4"
+            :style="{ color: themeStore.currentColors.secondary }"
+            />
           </div>
-          <h3 class="text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] font-semibold text-secondary tracking-tight ">{{ title }}</h3>
+          <h3 class="text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] font-semibold  tracking-tight "
+          :style="{ color: themeStore.currentColors.secondary }"
+          >{{ title }}</h3>
         </div>
         <p class="text-gray-700 text-[10px] sm:text-[12px] md:text-[14px] lg:text-[16px] leading-relaxed tracking-wide">
           {{ description }}
@@ -18,7 +24,9 @@
 
       <!-- Bottom Section: Tools & Technologies -->
       <div>
-        <h4 class="text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] font-semibold text-main mb-2">Tools & Technologies</h4>
+        <h4 class="text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] font-semibold  mb-2"
+        :style="{ color: themeStore.currentColors.secondary }"
+        >Tools & Technologies</h4>
         <img :src="toolsIcon" alt="Tools Icon" class="lg:h-8 md:h-6  h-4  object-contain" />
       </div>
     </div>
@@ -26,6 +34,9 @@
 </template>
 
 <script setup>
+import { useThemeStore } from "@/stores/themeStore";
+
+const themeStore = useThemeStore();
 const props = defineProps({
   title: String,
   description: String,
