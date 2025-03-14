@@ -4,17 +4,20 @@
     :style="{ backgroundColor: themeStore.currentColors.main }"
   >
     <PageContainer>
-      <div class="flex justify-center items-center flex-col relative mb-7">
+     <div class="flex justify-center items-center flex-col relative mb-6">
+      <div class="text-center">
         <h1
-          class=" text-[45px] sm:text-[60px] md:text-[70px] font-bold  uppercase tracking-wide league"
+          class="text-[10vw] sm:text-[60px] md:text-[80px] font-bold uppercase tracking-wide league"
           :style="{ color: themeStore.currentColors.tertiary }"
         >
           Expertise
         </h1>
-        <div class="w-24 h-1 mx-auto  rounded-full"
-        :style="{ color: themeStore.currentColors.tertiary }">
+        <div
+          class="w-24 h-1 mx-auto rounded-full"
+          :style="{ backgroundColor: themeStore.currentColors.tertiary }"
+        ></div>
       </div>
-      </div>
+    </div>
 
       <div
         class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-4 md:gap-4 lg:gap-6 xl:gap-10 w-full max-w-7xl mx-auto pb-20"

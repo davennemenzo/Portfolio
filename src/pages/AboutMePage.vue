@@ -6,10 +6,10 @@
     <PageContainer>
       <div class="flex justify-center items-center flex-col relative mb-7">
         <h1
-          class="text-[30px] sm:text-[45px] md:text-[60px] lg:text-[70px] font-bold uppercase tracking-wide"
+          class="text-[10vh] sm:text-[45px] md:text-[60px] lg:text-[80px] font-bold uppercase tracking-wide"
           :style="{ color: themeStore.currentColors.tertiary }"
         >
-          About Me
+          About 
         </h1>
         <div
           class="w-24 h-1 mx-auto rounded-full"

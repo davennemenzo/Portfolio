@@ -4,7 +4,7 @@ import Home from './Home.vue';
 import ContactPage from './pages/ContactPage.vue';
 import ProjectsPage from './pages/ProjectsPage.vue';
 import ExpertisePage from './pages/ExpertisePage.vue';
-import TestimonialPage from './pages/TestimonialPage.vue';
+
 
 
 // Define the routes
@@ -33,10 +33,6 @@ const routes = [
     path: "/expertise",
     name: "ExpertisePage",
     component: ExpertisePage,
-  },{
-    path: "/testimonials",
-    name: "TestimonialsPage",
-    component: TestimonialPage,
   },
 ];
 
