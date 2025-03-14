@@ -38,7 +38,7 @@ import { useThemeStore } from "./stores/themeStore";
 const themeStore = useThemeStore();
 
 // Define colors for each theme
-const defaultColor = "#3b82f6"; // Blue
-const darkColor = "#1f2937"; // Dark Gray
-const warmColor = "#f59e0b"; // Warm Yellow
+const defaultColor = "#0779FF"; // Blue
+const darkColor = "#8B07FF"; // Dark Gray
+const warmColor = "#FF0F07"; // Warm Yellow
 </script>
