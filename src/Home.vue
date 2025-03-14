@@ -1,15 +1,24 @@
 <template>
-  <div class="h-screen overflow-y-auto poppins bg-secondary">
-    <!-- <button
-     
-      class="fixed top-4 right-4 p-2 bg-gray-800 text-white rounded-full z-20 hover:bg-gray-700 transition-colors"
-    >
-<a href="aboutme">      <img
-        src="/images/avatar.svg"
-        alt="About"
-        class="w-12 h-12 object-contain"
-      /></a>
-    </button> -->
+  <div class="h-screen overflow-y-auto poppins bg-secondary relative">
+    <!-- Paint Tray Theme Selector -->
+    <div class="flex justify-center flex-col z-10 absolute top-4 right-4 gap-4 mt-4">
+      <button
+        @click="themeStore.setTheme('default')"
+        class="w-10 h-10 rounded-full border-2 border-gray-300 hover:scale-110 transition-transform"
+        :style="{ backgroundColor: defaultColor }"
+      ></button>
+      <button
+        @click="themeStore.setTheme('dark')"
+        class="w-10 h-10 rounded-full border-2 border-gray-300 hover:scale-110 transition-transform"
+        :style="{ backgroundColor: darkColor }"
+      ></button>
+      <button
+        @click="themeStore.setTheme('warm')"
+        class="w-10 h-10 rounded-full border-2 border-gray-300 hover:scale-110 transition-transform"
+        :style="{ backgroundColor: warmColor }"
+      ></button>
+    </div>
+
     <Hero id="hero" />
     <AboutMePage id="aboutme" />
     <ProjectsPage id="projects" />
@@ -19,14 +28,17 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
-import Navbar from "@/components/Navbar.vue";
 import Hero from "@/components/Hero.vue";
-// Import the CSS file from the style folder
-import "@/styles/animation.css";
 import ProjectsPage from "./pages/ProjectsPage.vue";
-import TestimonialPage from "./pages/TestimonialPage.vue";
 import ExpertisePage from "./pages/ExpertisePage.vue";
 import ContactPage from "./pages/ContactPage.vue";
 import AboutMePage from "./pages/AboutMePage.vue";
+import { useThemeStore } from "./stores/themeStore";
+
+const themeStore = useThemeStore();
+
+// Define colors for each theme
+const defaultColor = "#0779FF"; // Blue
+const darkColor = "#8B07FF"; // Dark Gray
+const warmColor = "#FF0F07"; // Warm Yellow
 </script>

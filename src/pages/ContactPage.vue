@@ -1,14 +1,21 @@
 <template>
   <div
-    class="min-h-[300px] md:min-h-[600px] lg:min-h-screen flex flex-col items-center justify-center bg-secondary pb-2 overflow-hidden relative"
+    class="min-h-[300px] md:min-h-[600px] lg:min-h-screen flex flex-col items-center justify-center pb-2 overflow-hidden relative"
+    :style="themeStyles"
   >
-    <!-- Contact Title (Fixed scaling inside h1) -->
-    <h1 class="text-main league font-bold tracking-tight uppercase  mb-6 scale-y-[35] scale-x-[36] top-50 absolute">
+    <!-- Contact Title -->
+    <h1
+      class="league font-bold tracking-tight uppercase mb-6 scale-y-[35] scale-x-[36] top-[30%] transform -translate-y-1/2 absolute"
+      :style="{ color: themeStore.currentColors.main }"
+    >
       Contact
     </h1>
 
     <!-- Contact Info -->
-    <div class="flex league flex-col items-center gap-2 text-tertiary text-center absolute bottom-40 ">
+    <div
+      class="flex league flex-col items-center gap-2 text-center absolute bottom-40"
+      :style="{ color: themeStore.currentColors.tertiary }"
+    >
       <p class="text-xl tracking-widest">DAVENNEMENZO@GMAIL.COM</p>
       <p class="text-xl tracking-widest">+63 9453482113</p>
 
@@ -43,12 +50,23 @@
           <Instagram class="w-8 h-8" />
         </a>
       </div>
-     
-    </div>
-     <p class="mt-7 text-[12px] text-tertiary poppins flex absolute bottom-10">© 2025 Daven Nemenzo. All rights reserved.</p>
+      </div>
+
+    <!-- Footer -->
+    <p class="mt-7 text-[12px] poppins flex absolute bottom-10" :style="{ color: themeStore.currentColors.tertiary }">
+      © 2025 Daven Nemenzo. All rights reserved.
+    </p>
   </div>
 </template>
 
 <script setup>
 import { Facebook, Linkedin, Github, Instagram } from "lucide-vue-next";
+import { computed } from "vue";
+import { useThemeStore } from "@/stores/themeStore";
+
+const themeStore = useThemeStore();
+
+const themeStyles = computed(() => ({
+  backgroundColor: themeStore.currentColors.secondary, // Background color
+}));
 </script>

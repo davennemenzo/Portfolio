@@ -1,15 +1,19 @@
 <template>
   <div
-    class="min-h-auto flex-col bg-main  overflow-hidden relative py-10"
+    class="min-h-auto flex-col   overflow-hidden relative py-10"
+    :style="{ backgroundColor: themeStore.currentColors.main }"
   >
     <PageContainer>
       <div class="flex justify-center items-center flex-col relative mb-7">
         <h1
-          class=" text-[45px] sm:text-[60px] md:text-[70px] font-bold text-tertiary uppercase tracking-wide league"
+          class=" text-[45px] sm:text-[60px] md:text-[70px] font-bold  uppercase tracking-wide league"
+          :style="{ color: themeStore.currentColors.tertiary }"
         >
           Expertise
         </h1>
-        <div class="w-24 h-1 mx-auto bg-tertiary rounded-full"></div>
+        <div class="w-24 h-1 mx-auto  rounded-full"
+        :style="{ color: themeStore.currentColors.tertiary }">
+      </div>
       </div>
 
       <div
@@ -42,6 +46,9 @@
 import PageContainer from "@/components/PageContainer.vue";
 import SkillCard from "@/components/SkillCard.vue";
 import { Component, Code, Smartphone } from 'lucide-vue-next';
+import { useThemeStore } from "@/stores/themeStore";
+
+const themeStore = useThemeStore();
 </script>
 
 <style scoped>

@@ -1,20 +1,25 @@
 <template>
   <div
-    class="sm:min-h-screen min-h-auto flex flex-col bg-main sm:py-[50px] py-5 overflow-hidden relative league"
+    class="sm:min-h-screen min-h-auto flex flex-col sm:py-[50px] py-5 overflow-hidden relative league"
+    :style="{ backgroundColor: themeStore.currentColors.main }"
   >
     <PageContainer>
       <div class="flex justify-center items-center flex-col relative mb-7">
         <h1
-          class="text-[30px] sm:text-[45px] md:text-[60px] lg:text-[70px] font-bold text-tertiary uppercase tracking-wide"
+          class="text-[30px] sm:text-[45px] md:text-[60px] lg:text-[70px] font-bold uppercase tracking-wide"
+          :style="{ color: themeStore.currentColors.tertiary }"
         >
           About Me
         </h1>
-        <div class="w-24 h-1 mx-auto bg-tertiary rounded-full"></div>
+        <div
+          class="w-24 h-1 mx-auto rounded-full"
+          :style="{ backgroundColor: themeStore.currentColors.tertiary }"
+        ></div>
       </div>
 
       <!-- Main Content -->
       <div class="flex justify-center items-center">
-        <div class="flex flex-col text-tertiary uppercase font-medium">
+        <div class="flex flex-col uppercase font-medium">
           <div
             class="space-y-7 text-[20px] sm:text-[25px] md:text-[30px] lg:text-[40px] leading-relaxed lg:leading-tight tracking-wide text-center lg:w-[450px] xl:w-[650px]"
           >
@@ -27,6 +32,7 @@
                 'opacity-30': !visibleParagraphs[index],
               }"
               class="transition-opacity duration-500"
+              :style="{ color: themeStore.currentColors.tertiary }"
             >
               {{ paragraph }}
             </p>
@@ -38,8 +44,11 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, computed } from "vue";
+import { useThemeStore } from "@/stores/themeStore";
 import PageContainer from "@/components/PageContainer.vue";
+
+const themeStore = useThemeStore();
 
 const paragraphs = [
   "I'm a Frontend Developer and UI/UX Designer passionate about creating intuitive and responsive web applications. Currently pursuing a B.S. in Information Technology (graduating in 2025), I specialize in Vue.js and Tailwind CSS, bridging design and functionality for seamless user experiences.",
