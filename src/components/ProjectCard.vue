@@ -1,119 +1,76 @@
 <template>
-  <!-- Mobile Layout -->
   <div
-    class="md:hidden relative flex flex-col items-center p-4 w-[220px] h-auto sm:w-[250px] sm:h-[350px] rounded-3xl bg-gray-200 group overflow-hidden transform-gpu"
+    :class="[
+      'relative flex flex-col justify-between sm:gap-y-4 gap-y-2 rounded-3xl bg-gray-200 group overflow-hidden transform-gpu p-4',
+      layoutClasses
+    ]"
   >
     <!-- Media Section -->
-    <div
-      class="w-full h-25 sm:h-48 mb-3 border-b-2 border-secondary overflow-hidden transform-gpu transition-all duration-500 ease-in-out"
-    >
-      <video
-        class="w-full h-full object-cover rounded-xl"
-        autoplay
-        muted
-        loop
-        playsinline
+    <div class="w-full flex flex-col sm:gap-y-4 gap-y-2">
+      <div
+        class="w-full border-b-2 border-secondary overflow-hidden transition-all duration-500 ease-in-out"
+        :class="mediaHeight"
       >
-        <source :src="project.videoSrc" type="video/mp4" />
-      </video>
+        <video class="w-full h-full object-cover rounded-t-xl" autoplay muted loop playsinline>
+          <source :src="project.videoSrc" type="video/mp4" />
+        </video>
+      </div>
+      <div class="flex flex-col gap-y-2">
+        <h3 class="text-secondary font-bold leading-tight" :class="titleSize">{{ project.title }}</h3>
+        <p class="text-slate-700 leading-relaxed" :class="descSize">{{ project.description }}</p>
+      </div>
     </div>
 
     <!-- Text Section -->
-    <div
-      class="flex flex-col gap-y-4 w-full transform-gpu transition-all duration-500 ease-in-out"
-    >
-      <div class="flex flex-col gap-y-2">
-        <h3
-          class="text-secondary font-bold transform-gpu transition-all duration-500 ease-in-out text-[14px]"
-        >
-          {{ project.title }}
-        </h3>
-        <p
-          class="text-slate-700 transform-gpu transition-all duration-500 ease-in-out text-[10px]"
-        >
-          {{ project.description }}
-        </p>
+    <div class="flex flex-col md:gap-y-3 gap-y-2">
+      <div class="w-fit p-2 font-bold bg-secondary text-tertiary rounded-lg" :class="categorySize">
+        {{ project.category }}
       </div>
-
-      <div class="flex flex-col gap-y-2">
-        <div
-          class="w-fit p-2 font-bold bg-secondary text-tertiary rounded-lg transform-gpu text-[8px]"
-        >
-          {{ project.category }}
-        </div>
-
-        <a :href="project.skillIconsUrl" target="_blank">
-          <img
-            :src="project.skillIcons"
-            alt="Project Skills"
-            class="h-6 object-contain transform-gpu"
-          />
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Desktop Layout -->
-  <div
-    class="hidden md:flex relative flex-col items-center p-6 w-full rounded-3xl bg-gray-200 group overflow-hidden transform-gpu"
-  >
-    <!-- Media Section -->
-    <div
-      class="w-full mb-3 border-b-2 border-secondary overflow-hidden transform-gpu transition-all duration-500 ease-in-out"
-    >
-      <video
-        class="w-full h-full object-cover rounded-xl"
-        autoplay
-        muted
-        loop
-        playsinline
-      >
-        <source :src="project.videoSrc" type="video/mp4" />
-      </video>
-    </div>
-
-    <!-- Text Section -->
-    <div
-      class="flex flex-col gap-y-4 w-full transform-gpu transition-all duration-500 ease-in-out"
-    >
-      <div class="flex flex-col gap-y-2">
-        <h3
-          class="text-secondary font-bold transform-gpu transition-all duration-500 ease-in-out text-[20px] lg:text-[22px]"
-        >
-          {{ project.title }}
-        </h3>
-        <p
-          class="text-slate-700 transform-gpu transition-all duration-500 ease-in-out text-[15px] lg:text-[16px]"
-        >
-          {{ project.description }}
-        </p>
-      </div>
-
-      <div class="flex flex-col gap-y-2">
-        <div
-          class="w-fit p-2 font-bold bg-secondary text-tertiary rounded-lg transform-gpu text-[10px] lg:text-[11px]"
-        >
-          {{ project.category }}
-        </div>
-
-        <a :href="project.skillIconsUrl" target="_blank">
-          <img
-            :src="project.skillIcons"
-            alt="Project Skills"
-            class="h-8 lg:h-9 object-contain transform-gpu"
-          />
-        </a>
-      </div>
+      <a :href="project.skillIconsUrl" target="_blank">
+        <img :src="project.skillIcons" alt="Project Skills" class="object-contain" :class="iconSize" />
+      </a>
     </div>
   </div>
 </template>
 
 <script setup>
-defineProps({
+import { computed } from 'vue';
+
+const props = defineProps({
   project: {
     type: Object,
     required: true,
   },
 });
-</script>
 
+// Dynamic height layout
+const layoutClasses = computed(() => ({
+  'min-h-[200px] h-auto sm:min-h-[300px] lg:min-h-[350px]': true, // Ensures the card has a min height but expands dynamically
+  'min-w-[280px] sm:w-[30vw] md:w-[40vw] lg:w-[50vw] xl:w-[40vw]': true, // Responsive width
+  'p-4 sm:p-3 md:p-4': true, // Dynamic padding
+}));
+
+// Media section keeps a good aspect ratio
+const mediaHeight = computed(() => ({
+  'aspect-[16/9] ': true, // Maintains aspect ratio
+  
+}));
+
+
+// Text scales responsively
+const titleSize = computed(() => ({
+  'text-[4vw] sm:text-[22px] md:text-[18px] lg:text-[20px] xl:text-[21px]': true,
+}));
+
+const descSize = computed(() => ({
+  'text-[3vw] sm:text-[14px] md:text-[12.5px] lg:text-[13.5px] xl:text-[14.5px]': true,
+}));
+
+const categorySize = computed(() => ({
+  'text-[2vw] sm:text-[12px] md:text-[10px] lg:text-[12px] xl:text-[13px]': true,
+}));
+
+const iconSize = computed(() => ({
+  'h-[5vw] sm:h-5 md:h-6 lg:h-8 xl:h-9': true,
+}));
+</script>

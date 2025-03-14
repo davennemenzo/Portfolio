@@ -1,14 +1,14 @@
 <template>
   <div
-    class="min-h-screen flex flex-col items-center justify-center bg-secondary pb-2 overflow-hidden relative"
+    class="min-h-[300px] md:min-h-[600px] lg:min-h-screen flex flex-col items-center justify-center bg-secondary pb-2 overflow-hidden relative"
   >
     <!-- Contact Title (Fixed scaling inside h1) -->
-    <h1 class="text-main league font-bold tracking-tight uppercase  mb-6 scale-y-[35] scale-x-[36] top-60 absolute">
+    <h1 class="text-main league font-bold tracking-tight uppercase  mb-6 scale-y-[35] scale-x-[36] top-50 absolute">
       Contact
     </h1>
 
     <!-- Contact Info -->
-    <div class="flex league flex-col items-center gap-2 text-tertiary text-center absolute bottom-10 ">
+    <div class="flex league flex-col items-center gap-2 text-tertiary text-center absolute bottom-40 ">
       <p class="text-xl tracking-widest">DAVENNEMENZO@GMAIL.COM</p>
       <p class="text-xl tracking-widest">+63 9453482113</p>
 
@@ -43,9 +43,9 @@
           <Instagram class="w-8 h-8" />
         </a>
       </div>
-      <p class="mt-7 text-[12px] poppins">© 2025 Daven Nemenzo. All rights reserved.</p>
+     
     </div>
-    
+     <p class="mt-7 text-[12px] text-tertiary poppins flex absolute bottom-10">© 2025 Daven Nemenzo. All rights reserved.</p>
   </div>
 </template>
 
