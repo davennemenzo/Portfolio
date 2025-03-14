@@ -7,7 +7,7 @@
     <div class="flex justify-center items-center flex-col relative mb-6">
       <div class="text-center">
         <h1
-          class="text-[8vw] sm:text-[60px] md:text-[70px] font-bold uppercase tracking-wide league"
+          class="text-[10vw] sm:text-[60px] md:text-[80px] font-bold uppercase tracking-wide league"
           :style="{ color: themeStore.currentColors.tertiary }"
         >
           Projects
@@ -66,7 +66,7 @@ import { useThemeStore } from "@/stores/themeStore"; // Ensure this is your Pini
 import Flicking from "@egjs/vue3-flicking";
 import "@egjs/vue3-flicking/dist/flicking.css";
 import ProjectCard from "@/components/ProjectCard.vue";
-import PassafunVideo from "@/videos/Passafun.mp4";
+import PassafunVideo from "@/videos/Passafun.webm";
 import { Perspective, Pagination, Fade } from "@egjs/flicking-plugins";
 import "@egjs/flicking-plugins/dist/pagination.css";
 
