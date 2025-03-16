@@ -31,8 +31,8 @@
         ></button>
       </div>
     </div>
-
-    <Hero id="hero" />
+    <Hero1/>
+    <!-- <Hero id="hero" /> -->
     <AboutMePage id="aboutme" />
     <ProjectsPage id="projects" />
     <ExpertisePage id="expertise" />
@@ -49,6 +49,7 @@ import ContactPage from "./pages/ContactPage.vue";
 import AboutMePage from "./pages/AboutMePage.vue";
 import { useThemeStore } from "./stores/themeStore";
 import { Palette } from "lucide-vue-next";
+import Hero1 from "./components/Hero1.vue";
 
 const themeStore = useThemeStore();
 
