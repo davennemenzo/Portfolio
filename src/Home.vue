@@ -1,5 +1,5 @@
 <template>
-  <div class="h-screen overflow-y-auto poppins bg-secondary relative">
+  <div class="h-screen overflow-y-auto  poppins bg-main relative">
     <!-- Paint Tray Theme Selector -->
     <div class="fixed bottom-2 right-2 md:right-3 lg:right-4 flex flex-col items-center gap-4 z-10">
       <!-- Palette Button -->
@@ -55,10 +55,10 @@ const themeStore = useThemeStore();
 
 // Define color themes
 const colors = [
-  { name: "default", hex: "#0779FF" }, // Blue
-  { name: "dark", hex: "#3c0350" },    // Dark Gray
-  { name: "warm", hex: "#ede6d3" },    // Warm Yellow
-  { name: "green", hex: "#37af5d" },   // Green
+  { name: "default", hex: "#ede6d3" }, // Warm Yellow
+  { name: "dark", hex: "#3c0350" },    // Violet
+  { name: "warm", hex: "#ffffff" },    // Dark Gray
+  { name: "blue", hex: "#0779ff" },   // Blue
 ];
 
 // Toggle Palette

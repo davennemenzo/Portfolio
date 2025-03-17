@@ -1,6 +1,6 @@
 <template>
   <div
-    class="group relative bg-lavender p-6 rounded-2xl shadow-md transition-all duration-300 hover:shadow-lg"
+    class="group relative bg-gray-200 p-6 rounded-2xl shadow-md transition-all duration-300 hover:shadow-lg"
   >
     <div class="flex flex-col justify-between h-full ">
       <!-- Top Section: Icon, Title, Description -->
