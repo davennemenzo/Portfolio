@@ -51,9 +51,9 @@ import PageContainer from "@/components/PageContainer.vue";
 const themeStore = useThemeStore();
 
 const paragraphs = [
-  "I'm a Frontend Developer and UI/UX Designer passionate about creating intuitive and responsive web applications. Currently pursuing a B.S. in Information Technology (graduating in 2025), I specialize in Vue.js and Tailwind CSS, bridging design and functionality for seamless user experiences.",
-  "I continuously expand my skills by exploring JavaScript frameworks and design tools, ensuring both aesthetics and performance in my work. My goal is to craft user-friendly interfaces that are both visually appealing and highly functional.",
-  "Beyond development, I'm driven by curiosity and growth, always eager to learn, improve, and innovate. Stay curious and keep moving forward.",
+  "Daven is a frontend developer and UI/UX designer specializing in Vue.js and Tailwind CSS. With a passion for crafting intuitive and responsive web applications, Daven seamlessly blends design and functionality to create engaging user experiences.",
+  "Currently pursuing a B.S. in Information Technology (graduating in 2025), Daven is constantly exploring new JavaScript frameworks and design tools to enhance aesthetics and performance.",
+  "Past projects include [mention notable projects or collaborations], with a focus on clean, user-friendly interfaces that prioritize both form and function. Driven by curiosity and innovation, Daven is always learning, iterating, and pushing the boundaries of frontend development.",
 ];
 
 const paragraphRefs = ref([]);
