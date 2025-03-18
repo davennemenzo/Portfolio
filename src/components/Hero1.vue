@@ -3,6 +3,7 @@
     class="h-screen flex flex-col overflow-hidden relative league"
     :style="themeStyles"
     ref="heroContainer"
+    @click="handleClick"
   >
     <!-- Header Information -->
     <div class="flex flex-col items-center justify-center uppercase tracking-widest leading-tight league pt-10 md:pt-4">
@@ -23,10 +24,7 @@
       <!-- Images Section -->
       <div 
         class="flex flex-row items-center justify-center relative h-[150px] md:h-[200px] lg:h-[240px] xl:h-[270px] mx-auto leading-0" 
-        ref="imageContainer" 
-        @touchstart="handleTouchStart" 
-        @touchmove="handleTouchMove" 
-        @touchend="handleTouchEnd"
+        ref="imageContainer"
       >
         <template v-for="(image, index) in images" :key="index">
           <div 
@@ -68,16 +66,15 @@ const images = [
 const positions = ref(images.map(() => ({ x: 0, y: 0, angle: 0 })));
 const velocity = ref(images.map(() => ({ x: 0, y: 0 })));
 
-let mouseX = 0;
-let mouseY = 0;
+let targetX = 0;
+let targetY = 0;
 const stiffness = 0.1; // Strength of spring effect
 const damping = 0.8; // How much it slows down
-const isTouching = ref(false);
 
 const updatePositions = () => {
   for (let i = 0; i < images.length; i++) {
-    const leaderX = i === 0 ? mouseX : positions.value[i - 1].x;
-    const leaderY = i === 0 ? mouseY : positions.value[i - 1].y;
+    const leaderX = i === 0 ? targetX : positions.value[i - 1].x;
+    const leaderY = i === 0 ? targetY : positions.value[i - 1].y;
 
     velocity.value[i].x += (leaderX - positions.value[i].x) * stiffness;
     velocity.value[i].y += (leaderY - positions.value[i].y) * stiffness;
@@ -95,35 +92,15 @@ const updatePositions = () => {
   requestAnimationFrame(updatePositions);
 };
 
-const handleMouseMove = (event) => {
-  if (isTouching.value || !heroContainer.value) return; // Disable if dragging
-  mouseX = event.clientX - heroContainer.value.offsetWidth / 2;
-  mouseY = event.clientY - heroContainer.value.offsetHeight / 2;
-};
-
-const handleTouchStart = (event) => {
-  isTouching.value = true;
-  mouseX = event.touches[0].clientX - heroContainer.value.offsetWidth / 2;
-  mouseY = event.touches[0].clientY - heroContainer.value.offsetHeight / 2;
-};
-
-const handleTouchMove = (event) => {
-  if (!imageContainer.value) return;
-  mouseX = event.touches[0].clientX - heroContainer.value.offsetWidth / 2;
-  mouseY = event.touches[0].clientY - heroContainer.value.offsetHeight / 2;
-};
-
-const handleTouchEnd = () => {
-  isTouching.value = false; // Re-enable magnetic effect after dragging ends
+const handleClick = (event) => {
+  if (!heroContainer.value) return;
+  const rect = heroContainer.value.getBoundingClientRect();
+  targetX = event.clientX - rect.width / 2;
+  targetY = event.clientY - rect.height / 2;
 };
 
 onMounted(() => {
-  window.addEventListener("mousemove", handleMouseMove);
   updatePositions();
-});
-
-onUnmounted(() => {
-  window.removeEventListener("mousemove", handleMouseMove);
 });
 </script>
 
@@ -162,12 +139,6 @@ onUnmounted(() => {
   .image-item {
     width: 200px;
     height: 200px;
-  }
-}
-
-@media (hover: none) {
-  .image-item {
-    transition: none;
   }
 }
 </style>
